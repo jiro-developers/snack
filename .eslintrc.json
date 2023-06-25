@@ -1,3 +1,46 @@
 {
-  "extends": "next/core-web-vitals"
+  "plugins": ["@typescript-eslint", "import"],
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "root": true,
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "prefer-const": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", ["parent", "sibling"], "index", "object"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always"
+      }
+    ],
+    // styled-component가 아닌 element에 css prop을 전달하는 경우, 오류가 발생됩니다.
+    "react/no-unknown-property": [
+      "error",
+      {
+        "ignore": ["css"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["./redux/*/slice.ts", "./redux/*/action.ts", "./redux/*/reducer.ts"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    }
+  ]
 }
