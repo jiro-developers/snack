@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import ItemListCard from '@/components/ItemListCard';
 import Items from '@/components/Items';
-import ToggleItem from '@/components/ToggleItem';
+import TabItem from '@/components/TabItem';
 
 interface Props {
   snack: { alt: string; src: string }[];
@@ -38,7 +38,7 @@ const AllItems = (props: Props) => {
   return (
     <RootWrap>
       <DivWrap>
-        <ToggleItem item={itemList} setItem={setItemList} />
+        <TabItem item={itemList} setItem={setItemList} />
 
         <Items items={items} selectItem={selectItem} setSelectItem={setSelectItem} />
       </DivWrap>
