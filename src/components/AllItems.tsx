@@ -50,8 +50,8 @@ const AllItems = (props: Props) => {
             return <ItemListCard items={allItems} item={item} onClick={deleteItem} key={index} />;
           })}
         </List>
-        <CopyButtonWrap value="복사 하기" onClick={copy}>
-          복사 하기
+        <CopyButtonWrap value="복사하기" onClick={copy}>
+          복사하기
         </CopyButtonWrap>
       </SelectList>
     </RootWrap>
