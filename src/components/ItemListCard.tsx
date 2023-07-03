@@ -1,46 +1,68 @@
-import React from 'react';
+import React, { SetStateAction } from 'react';
 
-import {AiOutlineClose} from "react-icons/ai";
+import { AiOutlineClose } from 'react-icons/ai';
 import styled from 'styled-components';
 
-import {Counter} from '@/components/Counter';
-import {useCounter} from '@/hook/useCounter';
+import { Counter } from '@/components/Counter';
+import { useCounter } from '@/hook/useCounter';
+import { Item } from '@/type/itemType';
 
 interface Props {
-    items: {
-        alt: string;
-        src: string;
-    }[];
-    item: string;
-    onClick: (id: string) => () => void;
+  product: Item;
+  onClick: (id: string) => () => void;
+  setSelectItem: React.Dispatch<SetStateAction<Item[]>>;
 }
 
 const ItemListCard: React.FC<Props> = (props) => {
-    const {items, item, onClick} = props;
-    const {value, componentProps} = useCounter(1, {min: 1, max: Number.MAX_SAFE_INTEGER});
+  const { product, onClick, setSelectItem } = props;
+  const { value, componentProps } = useCounter(1, { min: 1, max: Number.MAX_SAFE_INTEGER });
 
-    const images = items.find((list) => {
-        const {alt} = list;
+  const { type, item } = product;
+  const replaceSlash = item.replaceAll('|', '/');
+  const replaceSpace = replaceSlash.replaceAll(' ', '');
 
-        return alt === item;
-    });
+  const src = `/images/${type}/${replaceSpace}.jpg`;
 
-    return (
-        <RootWrap>
-            <CardWrap>
-                <DivWrap>
-                    <Image src={images?.src} alt={images?.alt}/>
-                    <Content>
-                        <span>{item}</span> {value > 1 && <span>* {value}</span>}
-                    </Content>
-                </DivWrap>
-                <DeleteIcon onClick={onClick(item)}>
-                    <AiOutlineClose size={'22px'} color={'#61666B'}/>
-                </DeleteIcon>
-            </CardWrap>
-            <Counter {...componentProps} />
-        </RootWrap>
+  const handleIncrement = () => {
+    setSelectItem((items) =>
+      items.map((itemData) => {
+        if (itemData.item === product.item) {
+          return { ...itemData, quantity: itemData.quantity + 1 };
+        }
+        return itemData;
+      })
     );
+  };
+
+  const handleDecrement = () => {
+    setSelectItem((items) =>
+      items.map((itemData) => {
+        if (itemData.item === product.item && itemData.quantity > 1) {
+          return { ...itemData, quantity: itemData.quantity - 1 };
+        }
+        return itemData;
+      })
+    );
+  };
+
+  return (
+    <RootWrap>
+      <CardWrap>
+        <DivWrap>
+          <Image src={src} alt={item} />
+          <Content>
+            {item}
+            {value > 1 && ` * ${value}`}
+          </Content>
+        </DivWrap>
+        <DeleteIcon onClick={onClick(item)}>
+          <AiOutlineClose size={'22px'} color={'#61666B'} />
+        </DeleteIcon>
+      </CardWrap>
+
+      <Counter {...componentProps} handleIncrease={handleIncrement} handleDecrease={handleDecrement} />
+    </RootWrap>
+  );
 };
 
 export default ItemListCard;
@@ -65,7 +87,7 @@ const RootWrap = styled.div`
 const CardWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  
+
   height: 64px;
   width: 100%;
 `;

@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import ItemListCard from '@/components/ItemListCard';
 import Items from '@/components/Items';
 import TabItem from '@/components/TabItem';
+import { Item, Product } from '@/type/itemType';
 
 interface Props {
   snack: { alt: string; src: string }[];
@@ -14,13 +15,18 @@ interface Props {
 
 const AllItems = (props: Props) => {
   const { snack, drink } = props;
-  const [itemList, setItemList] = useState<'snack' | 'drink'>('snack');
-  const [selectItem, setSelectItem] = useState<string[]>([]);
+  const [itemList, setItemList] = useState<Product>('snack');
+  const [selectItem, setSelectItem] = useState<Item[]>([]);
 
   const items = itemList === 'snack' ? snack : drink;
 
   const copy = async () => {
-    const selectedItemList = selectItem.join('\n');
+    const selectedItemList = selectItem
+      .map(({ item, quantity }) => {
+        return `${item} * ${quantity}`;
+      })
+      .join('\n');
+
     await navigator.clipboard.writeText(selectedItemList);
 
     alert('copy');
@@ -29,25 +35,23 @@ const AllItems = (props: Props) => {
   const deleteItem = (id: string) => {
     return () =>
       setSelectItem((itemList) => {
-        return [...itemList.filter((item) => item !== id)];
+        return [...itemList.filter(({ item }) => item !== id)];
       });
   };
-
-  const allItems = [...snack, ...drink];
 
   return (
     <RootWrap>
       <DivWrap>
         <TabItem item={itemList} setItem={setItemList} />
 
-        <Items items={items} selectItem={selectItem} setSelectItem={setSelectItem} />
+        <Items itemStatus={itemList} items={items} selectItem={selectItem} setSelectItem={setSelectItem} />
       </DivWrap>
 
       <SelectList>
         <Title>주문 목록</Title>
         <List>
-          {selectItem.map((item, index) => {
-            return <ItemListCard items={allItems} item={item} onClick={deleteItem} key={index} />;
+          {selectItem.map((product, index) => {
+            return <ItemListCard product={product} onClick={deleteItem} setSelectItem={setSelectItem} key={index} />;
           })}
         </List>
         <CopyButtonWrap value="복사하기" onClick={copy}>

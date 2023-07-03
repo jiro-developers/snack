@@ -1,95 +1,106 @@
-import React, {SetStateAction} from 'react';
+'use client';
+import React, { SetStateAction } from 'react';
 
-import {AiOutlineCheck} from "react-icons/ai";
+import { AiOutlineCheck } from 'react-icons/ai';
 import styled from 'styled-components';
 
+import { Item, Product } from '@/type/itemType';
+
 interface Props {
-    items: {
-        alt: string;
-        src: string;
-    }[];
-    setSelectItem: React.Dispatch<SetStateAction<string[]>>;
-    selectItem: string[];
+  itemStatus: Product;
+  items: {
+    alt: string;
+    src: string;
+  }[];
+  setSelectItem: React.Dispatch<SetStateAction<Item[]>>;
+  selectItem: Item[];
 }
 
 const Items: React.FC<Props> = (props) => {
-    const {items, selectItem, setSelectItem} = props;
+  const { itemStatus, items, selectItem, setSelectItem } = props;
 
-    const handleSelectItem = (event: React.MouseEvent<HTMLDivElement>) => {
-        const clickedItem = event.currentTarget.textContent as string;
+  const handleSelectItem = (event: React.MouseEvent<HTMLDivElement>) => {
+    const clickedItem = event.currentTarget.textContent as string;
 
-        setSelectItem((prev) => {
-            if (prev.includes(clickedItem)) {
-                return prev;
-            }
+    setSelectItem((prev) => {
+      const hasItems = prev.find(({ item }) => item === clickedItem);
+      if (hasItems) {
+        return prev;
+      }
 
-            return [...prev, clickedItem];
-        });
-    };
+      return [...prev, { type: itemStatus, item: clickedItem, quantity: 1 }];
+    });
+  };
 
-    return (
-        <RootWrap>
-            {items.map((item, index) => {
-                const {src, alt} = item;
-                const isSelected = selectItem.includes(item.alt);
+  return (
+    <RootWrap>
+      {items.map((item, index) => {
+        const { alt } = item;
 
-                return (
-                    <ItemWrap key={index} onClick={handleSelectItem}>
-                        {isSelected && <DivWrap>
-                            <AiOutlineCheck color={'rgb(97, 67, 255)'}/>
-                        </DivWrap>}
-                        <ImageWrap src={src} alt={alt}/>
-                        <Discription>{alt}</Discription>
-                    </ItemWrap>
-                );
-            })}
-        </RootWrap>
-    );
-}
-    ;
+        const replaceSlash = alt.replaceAll('|', '/');
+        const replaceSpace = replaceSlash.replaceAll(' ', '');
 
-    export default Items;
+        const src = `/images/${itemStatus}/${replaceSpace}.jpg`;
 
-    const RootWrap = styled.div`
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      justify-content: center;
+        const isSelected = selectItem.find(({ item }) => item === alt);
 
-      margin-top: 20px;
-    `;
+        return (
+          <ItemWrap key={index} onClick={handleSelectItem}>
+            {isSelected && (
+              <DivWrap>
+                <AiOutlineCheck color={'rgb(97, 67, 255)'} />
+              </DivWrap>
+            )}
+            <ImageWrap src={src} alt={alt} />
+            <Discription>{alt}</Discription>
+          </ItemWrap>
+        );
+      })}
+    </RootWrap>
+  );
+};
+export default Items;
 
-    const ItemWrap = styled.div`
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      width: 200px;
-      height: 268px;
+const RootWrap = styled.div`
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
 
-      cursor: pointer;
-    `;
+  margin-top: 20px;
+`;
 
-    const DivWrap = styled.div`
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+const ItemWrap = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 268px;
 
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      border: 1px solid rgb(97, 67, 255);
-      background-color: #fff;
-    `;
+  cursor: pointer;
+`;
 
-    const ImageWrap = styled.img`
-      width: 200px;
-      height: 200px;
-      object-fit: contain;
-    `;
+const DivWrap = styled.div`
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    const Discription = styled.div`
-      margin-top: 16px;
-    `;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid rgb(97, 67, 255);
+  background-color: #fff;
+`;
+
+const ImageWrap = styled.img`
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+`;
+
+const Discription = styled.div`
+  margin-top: 16px;
+`;

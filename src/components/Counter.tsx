@@ -1,29 +1,45 @@
 import React from 'react';
 
-import {AiOutlinePlus, AiOutlineMinus} from 'react-icons/ai'
+import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import styled from 'styled-components';
 
 export interface CounterProps {
-    className?: string;
-    value?: number;
-    onIncrease?: () => void;
-    onDecrease?: () => void;
+  className?: string;
+  value?: number;
+  onIncrease?: () => void;
+  onDecrease?: () => void;
+  handleIncrease: () => void;
+  handleDecrease: () => void;
 }
 
 export const Counter: React.FC<CounterProps> = (props) => {
-    const {className, value, onDecrease, onIncrease} = props;
+  const { className, handleIncrease, handleDecrease, value, onDecrease, onIncrease } = props;
 
-    return (
-        <CounterWrap className={className}>
-            <IconWrap onClick={onDecrease}>
-                <Icon><AiOutlineMinus/></Icon>
-            </IconWrap>
-            <CounterValue>{value}</CounterValue>
-            <IconWrap onClick={onIncrease}>
-                <Icon><AiOutlinePlus/></Icon>
-            </IconWrap>
-        </CounterWrap>
-    );
+  return (
+    <CounterWrap className={className}>
+      <IconWrap
+        onClick={() => {
+          handleDecrease();
+          onDecrease?.();
+        }}
+      >
+        <Icon>
+          <AiOutlineMinus />
+        </Icon>
+      </IconWrap>
+      <CounterValue>{value}</CounterValue>
+      <IconWrap
+        onClick={() => {
+          handleIncrease();
+          onIncrease?.();
+        }}
+      >
+        <Icon>
+          <AiOutlinePlus />
+        </Icon>
+      </IconWrap>
+    </CounterWrap>
+  );
 };
 
 const CounterWrap = styled.div`
