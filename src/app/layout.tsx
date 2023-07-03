@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Noto_Sans_KR } from 'next/font/google';
-import { NextResponse } from 'next/server';
 
 import StyledComponentsRegistry from '@/lib/registry';
 
@@ -12,15 +11,7 @@ const notoSansKr = Noto_Sans_KR({
   subsets: ['latin'],
 });
 
-async function fetchData() {
-  return fetch('http://localhost:3000/api/drink', {
-    method: 'GET',
-  });
-}
-
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const jsonData = await fetchData().then((data) => NextResponse.json(data));
-
   return (
     <html lang="en">
       <StyledComponentsRegistry>
