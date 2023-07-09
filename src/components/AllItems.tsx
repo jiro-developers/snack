@@ -1,11 +1,13 @@
 'use client';
 import React, { useState } from 'react';
 
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import ItemListCard from '@/components/ItemListCard';
 import Items from '@/components/Items';
 import TabItem from '@/components/TabItem';
+import Toast from '@/components/Toast';
+import { useToastContext } from '@/context/toastContext';
 import { Item, Product } from '@/type/itemType';
 
 interface Props {
@@ -18,6 +20,8 @@ const AllItems = (props: Props) => {
   const [itemList, setItemList] = useState<Product>('snack');
   const [selectItem, setSelectItem] = useState<Item[]>([]);
 
+  const { createToast, toasts } = useToastContext();
+
   const items = itemList === 'snack' ? snack : drink;
 
   const copy = async () => {
@@ -28,6 +32,8 @@ const AllItems = (props: Props) => {
       .join('\n');
 
     await navigator.clipboard.writeText(selectedItemList);
+
+    createToast('복사가 완료 되었습니다', 'success');
 
     alert('copy');
   };
@@ -58,6 +64,18 @@ const AllItems = (props: Props) => {
           복사하기
         </CopyButtonWrap>
       </SelectList>
+      {/* TODO 후에 포탈로 변경*/}
+      <ToastWrap>
+        {toasts.map((toast) => {
+          return (
+            <ToastListWrap key={toast.id}>
+              <Toast id={toast.id} variant={toast.variant}>
+                {toast.message}
+              </Toast>
+            </ToastListWrap>
+          );
+        })}
+      </ToastWrap>
     </RootWrap>
   );
 };
@@ -139,4 +157,23 @@ const List = styled.div`
   width: 400px;
   min-width: 320px;
   max-width: 400px;
+`;
+
+const ToastWrap = styled.div`
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  z-index: 1;
+  transform: translateX(-50%);
+`;
+
+const toast = keyframes`
+  from {
+    transform: translateY(calc(-100% - 20px));
+  }
+`;
+
+const ToastListWrap = styled.div`
+  animation: ${toast} 800ms cubic-bezier(0, 0.46, 0, 1.04) both;
+  will-change: transform;
 `;

@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Noto_Sans_KR } from 'next/font/google';
 
+import { ToastProvider } from '@/context/toastContext';
 import StyledComponentsRegistry from '@/lib/registry';
 
 const notoSansKr = Noto_Sans_KR({
@@ -14,9 +15,11 @@ const notoSansKr = Noto_Sans_KR({
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <StyledComponentsRegistry>
-        <body className={notoSansKr.className}>{children}</body>
-      </StyledComponentsRegistry>
+      <ToastProvider>
+        <StyledComponentsRegistry>
+          <body className={notoSansKr.className}>{children}</body>
+        </StyledComponentsRegistry>
+      </ToastProvider>
     </html>
   );
 }
