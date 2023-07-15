@@ -36,8 +36,6 @@ const AllItems = (props: Props) => {
     await navigator.clipboard.writeText(selectedItemList);
 
     createToast('복사가 완료 되었습니다', 'success');
-
-    alert('copy');
   };
 
   const deleteItem = (id: string) => {
