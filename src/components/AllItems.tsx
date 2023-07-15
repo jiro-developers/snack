@@ -15,7 +15,9 @@ interface Props {
   drink: { alt: string; src: string }[];
 }
 
+
 const AllItems = (props: Props) => {
+
   const { snack, drink } = props;
   const [itemList, setItemList] = useState<Product>('snack');
   const [selectItem, setSelectItem] = useState<Item[]>([]);
