@@ -9,6 +9,7 @@ import TabItem from '@/components/TabItem';
 import Toast from '@/components/Toast';
 import { useToastContext } from '@/context/toastContext';
 import { Item, Product } from '@/type/itemType';
+import { Portal } from '@/components/Portal';
 
 interface Props {
   snack: { alt: string; src: string }[];
@@ -60,22 +61,24 @@ const AllItems = (props: Props) => {
             return <ItemListCard product={product} onClick={deleteItem} setSelectItem={setSelectItem} key={index} />;
           })}
         </List>
-        <CopyButtonWrap value="복사하기" onClick={copy}>
+        <CopyButtonWrap value='복사하기' onClick={copy}>
           복사하기
         </CopyButtonWrap>
       </SelectList>
-      {/* TODO 후에 포탈로 변경*/}
-      <ToastWrap>
-        {toasts.map((toast) => {
-          return (
-            <ToastListWrap key={toast.id}>
-              <Toast id={toast.id} variant={toast.variant}>
-                {toast.message}
-              </Toast>
-            </ToastListWrap>
-          );
-        })}
-      </ToastWrap>
+
+      <Portal>
+        <ToastWrap>
+          {toasts.map((toast) => {
+            return (
+              <ToastListWrap key={toast.id}>
+                <Toast id={toast.id} variant={toast.variant}>
+                  {toast.message}
+                </Toast>
+              </ToastListWrap>
+            );
+          })}
+        </ToastWrap>
+      </Portal>
     </RootWrap>
   );
 };

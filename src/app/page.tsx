@@ -36,6 +36,7 @@ export default async function Home() {
   return (
     <main>
       <AllItems snack={SNACK.SNACK_DATA} drink={DRINK.DRINK_DATA} />
+      <div id='toast'/>
     </main>
   );
 }
