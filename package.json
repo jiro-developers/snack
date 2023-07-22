@@ -10,6 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "text-to-json": "node scripts/createTextToJson.js",
     "drink-images": "node scripts/saveDrinkImage.js",
     "snack-images": "node scripts/saveSnackImage.js",
     "save-images": "yarn drink-images && yarn snack-images",
