@@ -5,11 +5,11 @@ import styled, { keyframes } from 'styled-components';
 
 import ItemListCard from '@/components/ItemListCard';
 import Items from '@/components/Items';
+import { Portal } from '@/components/Portal';
 import TabItem from '@/components/TabItem';
 import Toast from '@/components/Toast';
 import { useToastContext } from '@/context/toastContext';
 import { Item, Product } from '@/type/itemType';
-import { Portal } from '@/components/Portal';
 
 interface Props {
   snack: { alt: string; src: string }[];
