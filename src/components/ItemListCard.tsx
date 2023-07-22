@@ -1,5 +1,6 @@
 import React, { SetStateAction } from 'react';
 
+import NextImage from 'next/image'
 import { AiOutlineClose } from 'react-icons/ai';
 import styled from 'styled-components';
 
@@ -49,7 +50,7 @@ const ItemListCard: React.FC<Props> = (props) => {
     <RootWrap>
       <CardWrap>
         <DivWrap>
-          <Image src={src} alt={item} />
+          <Image src={src} alt={item} width={64} height={64}/>
           <Content>
             {item}
             {value > 1 && ` * ${value}`}
@@ -96,7 +97,7 @@ const DivWrap = styled.div`
   display: flex;
 `;
 
-const Image = styled.img`
+const Image = styled(NextImage)`
   width: 64px;
   height: 64px;
   object-fit: contain;

@@ -1,6 +1,7 @@
 'use client';
 import React, { SetStateAction } from 'react';
 
+import NextImage from 'next/image';
 import { AiOutlineCheck } from 'react-icons/ai';
 import styled from 'styled-components';
 
@@ -51,7 +52,7 @@ const Items: React.FC<Props> = (props) => {
                 <AiOutlineCheck color={'rgb(97, 67, 255)'} />
               </DivWrap>
             )}
-            <ImageWrap src={src} alt={alt} />
+            <ImageWrap src={src} alt={alt} width={200} height={200}/>
             <Discription>{alt}</Discription>
           </ItemWrap>
         );
@@ -95,7 +96,7 @@ const DivWrap = styled.div`
   background-color: #fff;
 `;
 
-const ImageWrap = styled.img`
+const ImageWrap = styled(NextImage)`
   width: 200px;
   height: 200px;
   object-fit: contain;

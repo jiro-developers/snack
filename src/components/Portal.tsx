@@ -28,7 +28,7 @@ export const Portal: React.FC<Props> = (props) => {
     document.body.appendChild(ref.current);
 
     return () => {
-      ref.current && document.body.removeChild(ref.current);
+      ref.current && document.body?.removeChild(ref.current);
     };
   }, []);
 
