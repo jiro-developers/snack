@@ -3,9 +3,13 @@ import React, { SetStateAction } from 'react';
 
 import NextImage from 'next/image';
 import { AiOutlineCheck } from 'react-icons/ai';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Item, Product } from '@/type/itemType';
+
+import { colors } from '../../core/colors';
+import { media } from '../../core/style.util/css.util';
+
 
 interface Props {
   itemStatus: Product;
@@ -46,14 +50,14 @@ const Items: React.FC<Props> = (props) => {
         const isSelected = selectItem.find(({ item }) => item === alt);
 
         return (
-          <ItemWrap key={index} onClick={handleSelectItem}>
-            {isSelected && (
-              <DivWrap>
-                <AiOutlineCheck color={'rgb(97, 67, 255)'} />
-              </DivWrap>
-            )}
-            <ImageWrap src={src} alt={alt} width={200} height={200}/>
-            <Discription>{alt}</Discription>
+          <ItemWrap key={index} onClick={handleSelectItem} isSelected={isSelected}>
+
+            <IconWrap isSelected={isSelected}>
+              {isSelected && <AiOutlineCheck color={colors.white} />}
+            </IconWrap>
+            <ImageWrap src={src} alt={alt} width={200} height={200} isSelected={isSelected} />
+
+            <Description>{alt}</Description>
           </ItemWrap>
         );
       })}
@@ -64,24 +68,21 @@ export default Items;
 
 const RootWrap = styled.div`
   display: flex;
-  gap: 40px;
+  gap: 32px;
   flex-wrap: wrap;
   justify-content: center;
 
   margin-top: 20px;
+  padding: 0 28px;
+
+  ${media.tablet} {
+    gap: 40px;
+  }
 `;
 
-const ItemWrap = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  height: 268px;
 
-  cursor: pointer;
-`;
 
-const DivWrap = styled.div`
+const IconWrap = styled.div<{ isSelected?: Item }>`
   position: absolute;
   right: 10px;
   top: 10px;
@@ -89,19 +90,52 @@ const DivWrap = styled.div`
   align-items: center;
   justify-content: center;
 
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  border: 1px solid rgb(97, 67, 255);
-  background-color: #fff;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  
+  border: 1px solid ${colors.grey100};
+  background-color: ${colors.white};
+
+  background-color: ${({ isSelected }) => (isSelected ? colors.black : colors.white)};;
 `;
 
-const ImageWrap = styled(NextImage)`
+const ImageWrap = styled(NextImage)<{ isSelected?: Item }>`
   width: 200px;
   height: 200px;
   object-fit: contain;
+
+  &:hover {
+    border: 1px solid ${colors.grey100};
+    border-radius: 8px;
+  }
+
+  ${({ isSelected }) =>
+          isSelected &&
+          css`
+            border: 1px solid ${colors.black};
+            border-radius: 8px;
+            pointer-events: none;
+          `};
 `;
 
-const Discription = styled.div`
+const ItemWrap = styled.div<{ isSelected?: Item }>`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 268px;
+  
+  cursor: pointer;
+  pointer-events: ${({ isSelected }) => (isSelected ? 'none' : 'auto')};
+  
+  &:hover{
+    ${IconWrap}{
+      background: ${colors.grey025};
+    }
+  }
+`;
+
+const Description = styled.div`
   margin-top: 16px;
 `;

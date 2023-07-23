@@ -2,6 +2,7 @@
 import React, {SetStateAction, useEffect, useState} from 'react';
 
 import styled from 'styled-components';
+import { colors } from '../../core/colors';
 
 interface Props {
     setItem: React.Dispatch<SetStateAction<'snack' | 'drink'>>;
@@ -71,15 +72,24 @@ const RootWrap = styled.div`
 `;
 
 const ButtonWrap = styled.button<{ $isClicked: boolean }>`
+  padding: 0;
+  border: none;
   width: 100%;
-  background-color: ${({$isClicked}) => ($isClicked ? '#fff' : '#f3f5f7')};
+  background-color: ${({ $isClicked }) => ($isClicked ? '#fff' : '#f3f5f7')};
+  
+  font-size: 20px;
+  font-weight: ${({ $isClicked }) => ($isClicked ? '800' : '600')};;
+  pointer-events: ${({ $isClicked }) => ($isClicked ? 'none' : 'auto')};
   -webkit-tap-highlight-color: transparent;
-
   &:focus {
     outline: none;
   }
 
-  padding: 0;
-  border: none;
+  &:hover {
+    background-color: #F9FAFB;
+    color: ${colors.grey600};
+    font-weight: 700;
+  }
+
   cursor: pointer;
 `;

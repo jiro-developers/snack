@@ -11,6 +11,8 @@ import Toast from '@/components/Toast';
 import { useToastContext } from '@/context/toastContext';
 import { Item, Product } from '@/type/itemType';
 
+import { colors } from '../../core/colors';
+
 interface Props {
   snack: { alt: string; src: string }[];
   drink: { alt: string; src: string }[];
@@ -36,7 +38,7 @@ const AllItems = (props: Props) => {
 
     await navigator.clipboard.writeText(selectedItemList);
 
-    createToast('복사가 완료 되었습니다', 'success');
+    createToast('주문 목록을 복사했어요.', 'success');
   };
 
   const deleteItem = (id: string) => {
@@ -108,6 +110,8 @@ const SelectList = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  
+  border-left: 1px solid ${colors.grey400};
 `;
 
 const Title = styled.div`
@@ -115,14 +119,17 @@ const Title = styled.div`
   top: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #000;
+  justify-content: left;
+  
+  padding-left: 32px;
+  color: ${colors.grey300};
   font-size: 20px;
   font-weight: 700;
   line-height: 100%;
-
-  height: 68px;
   width: 100%;
+  
+  padding-top: 32px;
+  padding-bottom: 24px;
 `;
 
 const CopyButtonWrap = styled.button`
@@ -139,7 +146,7 @@ const CopyButtonWrap = styled.button`
 
   padding: 24px 0px;
 
-  color: #fff;
+  color: ${colors.white};
   background-color: black;
   font-size: 20px;
   font-weight: 700;
@@ -153,10 +160,10 @@ const CopyButtonWrap = styled.button`
 
 const List = styled.div`
   position: fixed;
-  top: calc(68px + 40px);
-  height: calc(100% - 68px - 40px - 68px);
+  top: calc(56px + 20px);
+  height: calc(100% - 56px - 20px - 68px);
   overflow-y: scroll;
-  padding: 0 32px;
+  padding: 0 32px 32px;
   width: 400px;
   min-width: 320px;
   max-width: 400px;
