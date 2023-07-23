@@ -2,6 +2,7 @@
 import React, {SetStateAction, useEffect, useState} from 'react';
 
 import styled from 'styled-components';
+
 import { colors } from '../../core/colors';
 
 interface Props {

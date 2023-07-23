@@ -94,10 +94,9 @@ const IconWrap = styled.div<{ isSelected?: Item }>`
   height: 24px;
   border-radius: 8px;
   
-  border: 1px solid ${colors.grey100};
-  background-color: ${colors.white};
+  border: ${({ isSelected }) => (isSelected ? 'none' : `1px solid ${colors.grey100}`)};
 
-  background-color: ${({ isSelected }) => (isSelected ? colors.black : colors.white)};;
+  background-color: ${({ isSelected }) => (isSelected ? colors.black : colors.white)};
 `;
 
 const ImageWrap = styled(NextImage)<{ isSelected?: Item }>`
