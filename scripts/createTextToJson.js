@@ -11,12 +11,16 @@ const convertHTMLtoJSON = (html) =>{
   const $ = cheerio.load(html);
   const images = [];
 
+
   $('.thumb img').each((index, element) => {
+
     const img = $(element);
-    const alt = img.attr('alt');
+
+    // const alt = img.attr('alt');
+    const itemName = img.parent().next().text();
     const src = img.attr('src');
 
-    images.push({ alt, src });
+    images.push({ alt:itemName, src });
   });
 
   return images;
