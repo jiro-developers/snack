@@ -1,45 +1,62 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { AiOutlineClose } from 'react-icons/ai';
 import { BiCheckCircle, BiErrorCircle } from 'react-icons/bi';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
-import { ToastVariantType, useToastContext } from '@/context/toastContext';
+import { ToastVariantType } from '@/context/toastContext';
 
 const ICONS_BY_VARIANT = {
   success: BiCheckCircle,
   error: BiErrorCircle,
 };
 
-interface Props {
+interface ToastProps {
   id: string;
   variant: ToastVariantType;
   children: React.ReactNode;
   showIcon?: boolean;
+  onDismiss: (id: string) => void;
+  duration: number;
+  fadeOutDuration: number;
 }
 
-const Toast: React.FC<Props> = (props) => {
-  const { id, variant, children, showIcon = false } = props;
-  const { dismissToast } = useToastContext();
+const Toast: React.FC<ToastProps> = ({
+                                       id,
+                                       variant,
+                                       children,
+                                       showIcon = false,
+                                       onDismiss,
+                                       duration,
+                                       fadeOutDuration,
+                                     }) => {
+  const [isVisible, setIsVisible] = useState(true);
   const Icon = ICONS_BY_VARIANT[variant];
 
   useEffect(() => {
-    const setTime = setTimeout(() => {
-      dismissToast(id);
-    }, 3000);
+    const visibilityTimer = setTimeout(() => {
+      setIsVisible(false);
+    }, duration - fadeOutDuration);
 
-    return () => clearTimeout(setTime);
-  }, [dismissToast, id]);
+    const dismissTimer = setTimeout(() => {
+      onDismiss(id);
+    }, duration);
+
+    return () => {
+      clearTimeout(visibilityTimer);
+      clearTimeout(dismissTimer);
+    };
+  }, [id, duration, fadeOutDuration, onDismiss]);
 
   return (
-    <ToastWrap variant={variant}>
+    <ToastWrap $variant={variant} $isVisible={isVisible} $fadeOutDuration={fadeOutDuration}>
       {showIcon && (
         <IconWrap>
           <Icon size={24} />
         </IconWrap>
       )}
       <Content variant={variant}>{children}</Content>
-      <CloseButton onClick={() => dismissToast(id)}>
+      <CloseButton onClick={() => onDismiss(id)}>
         <AiOutlineClose size={18} />
       </CloseButton>
     </ToastWrap>
@@ -48,7 +65,12 @@ const Toast: React.FC<Props> = (props) => {
 
 export default Toast;
 
-const ToastWrap = styled.div<{ variant: ToastVariantType }>`
+const fadeOut = keyframes`
+  from { opacity: 1; }
+  to { opacity: 0; }
+`;
+
+const ToastWrap = styled.div<{ $variant: ToastVariantType; $isVisible: boolean; $fadeOutDuration: number }>`
   position: relative;
   display: flex;
   align-items: center;
@@ -58,9 +80,15 @@ const ToastWrap = styled.div<{ variant: ToastVariantType }>`
   max-width: 100%;
   width: 312px;
   margin: 16px 0;
+  animation: ${({ $isVisible, $fadeOutDuration }) =>
+          !$isVisible
+                  ? css`
+          ${fadeOut} ${$fadeOutDuration}ms ease-out forwards
+        `
+                  : 'none'};
 
-  ${({ variant }) => {
-    switch (variant) {
+  ${({ $variant }) => {
+    switch ($variant) {
       case 'success': {
         return css`
           background-color: black;
@@ -74,7 +102,6 @@ const ToastWrap = styled.div<{ variant: ToastVariantType }>`
     }
   }}
 `;
-
 const Content = styled.p<{ variant: ToastVariantType }>`
   flex: 1;
   font-size: 14px;

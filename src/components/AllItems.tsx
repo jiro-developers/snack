@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useState } from 'react';
 
 import styled, { keyframes } from 'styled-components';
@@ -13,19 +14,16 @@ import { Item, Product } from '@/type/itemType';
 
 import { colors } from '../../core/colors';
 
-interface Props {
+interface AllItemsProps {
   snack: { alt: string; src: string }[];
   drink: { alt: string; src: string }[];
 }
 
-
-const AllItems = (props: Props) => {
-
-  const { snack, drink } = props;
+const AllItems: React.FC<AllItemsProps> = ({ snack, drink }) => {
   const [itemList, setItemList] = useState<Product>('snack');
   const [selectItem, setSelectItem] = useState<Item[]>([]);
 
-  const { createToast, toasts } = useToastContext();
+  const { toasts, createToast, dismissToast } = useToastContext();
 
   const items = itemList === 'snack' ? snack : drink;
 
@@ -38,7 +36,7 @@ const AllItems = (props: Props) => {
 
     await navigator.clipboard.writeText(selectedItemList);
 
-    createToast('주문 목록을 복사했어요.', 'success');
+    createToast('주문 목록을 복사했어요.', 'success', 3000, 300);
   };
 
   const deleteItem = (id: string) => {
@@ -60,25 +58,28 @@ const AllItems = (props: Props) => {
         <Title>주문 목록</Title>
         <List>
           {selectItem.map((product, index) => {
-            return <ItemListCard product={product} onClick={deleteItem} setSelectItem={setSelectItem} key={index} />;
+            return <ItemListCard product={product}  onClick={deleteItem} setSelectItem={setSelectItem} key={index} />;
           })}
         </List>
-        <CopyButtonWrap value='복사하기' onClick={copy}>
+        <CopyButtonWrap onClick={copy}>
           복사하기
         </CopyButtonWrap>
       </SelectList>
 
       <Portal>
         <ToastWrap>
-          {toasts.map((toast) => {
-            return (
-              <ToastListWrap key={toast.id}>
-                <Toast id={toast.id} variant={toast.variant}>
-                  {toast.message}
-                </Toast>
-              </ToastListWrap>
-            );
-          })}
+          {toasts.map((toast) => (
+            <Toast
+              key={toast.id}
+              id={toast.id}
+              variant={toast.variant}
+              onDismiss={dismissToast}
+              duration={toast.duration}
+              fadeOutDuration={toast.fadeOutDuration}
+            >
+              {toast.message}
+            </Toast>
+          ))}
         </ToastWrap>
       </Portal>
     </RootWrap>
@@ -177,13 +178,4 @@ const ToastWrap = styled.div`
   transform: translateX(-50%);
 `;
 
-const toast = keyframes`
-  from {
-    transform: translateY(calc(-100% - 20px));
-  }
-`;
 
-const ToastListWrap = styled.div`
-  animation: ${toast} 800ms cubic-bezier(0, 0.46, 0, 1.04) both;
-  will-change: transform;
-`;

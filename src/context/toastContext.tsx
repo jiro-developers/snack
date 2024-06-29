@@ -1,5 +1,5 @@
 'use client';
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useCallback, useRef, useEffect } from 'react';
 
 export const TOAST_VARIANT = ['success', 'error'] as const;
 export type ToastVariantType = (typeof TOAST_VARIANT)[number];
@@ -8,11 +8,13 @@ interface ToastContext {
   id: string;
   message: string;
   variant: ToastVariantType;
+  duration: number;
+  fadeOutDuration: number;
 }
 
 type ToastContextProps = {
   toasts: ToastContext[];
-  createToast: (message: string, variant: ToastVariantType) => void;
+  createToast: (message: string, variant: ToastVariantType, duration?: number, fadeOutDuration?: number) => void;
   dismissToast: (id: string) => void;
 };
 
@@ -28,30 +30,33 @@ const ToastContext = createContext<ToastContextProps>({
 
 export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
   const [toasts, setToasts] = useState<Array<ToastContext>>([]);
-  const [toastId, setToastId] = useState<number>(1);
+  const toastIdRef = useRef(1);
 
-  const createToast = (message: string, variant: string) => {
-    const nextToasts = [
-      ...toasts,
-      {
-        id: String(toastId),
-        message,
-        variant,
-      } as ToastContext,
-    ];
+  const createToast = useCallback((
+    message: string,
+    variant: ToastVariantType,
+    duration = 3000,
+    fadeOutDuration = 300
+  ) => {
+    const id = String(toastIdRef.current++);
+    setTimeout(()=>{
+      setToasts((prevToasts) => [
+        ...prevToasts,
+        { id, message, variant, duration, fadeOutDuration },
+      ]);
+    },0)
 
-    setToasts(nextToasts);
+  }, []);
 
-    setToastId((prev) => prev + 1);
-  };
+  const dismissToast = useCallback((id: string) => {
+    setToasts((prevToasts) => prevToasts.filter((toast) => toast.id !== id));
+  }, []);
 
-  const dismissToast = async (id: string) => {
-    const deleteToastCallback = toasts.filter((toast) => toast.id !== id);
-
-    setToasts(deleteToastCallback);
-  };
-
-  return <ToastContext.Provider value={{ toasts, createToast, dismissToast }}>{children}</ToastContext.Provider>;
+  return (
+    <ToastContext.Provider value={{ toasts, createToast, dismissToast }}>
+      {children}
+    </ToastContext.Provider>
+  );
 };
 
 export const useToastContext = () => {

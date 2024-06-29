@@ -1,27 +1,22 @@
 import React, { SetStateAction } from 'react';
 
-import NextImage from 'next/image'
+import NextImage from 'next/image';
 import { AiOutlineClose } from 'react-icons/ai';
 import styled from 'styled-components';
 
 import { Counter } from '@/components/Counter';
-import { useCounter } from '@/hook/useCounter';
 import { Item } from '@/type/itemType';
 
-interface Props {
+interface ItemListCardProps {
   product: Item;
   onClick: (id: string) => () => void;
   setSelectItem: React.Dispatch<SetStateAction<Item[]>>;
 }
 
-const ItemListCard: React.FC<Props> = (props) => {
-  const { product, onClick, setSelectItem } = props;
-  const { value, componentProps } = useCounter(1, { min: 1, max: Number.MAX_SAFE_INTEGER });
-
-  const { type, item } = product;
+const ItemListCard: React.FC<ItemListCardProps> = ({ product, setSelectItem, onClick }) => {
+  const { type, item, quantity } = product;
   const replaceSlash = item.replaceAll('|', '/');
   const replaceSpace = replaceSlash.replaceAll(' ', '');
-
   const src = `/images/${type}/${replaceSpace}.jpg`;
 
   const handleIncrement = () => {
@@ -53,20 +48,23 @@ const ItemListCard: React.FC<Props> = (props) => {
           <Image src={src} alt={item} width={64} height={64}/>
           <Content>
             {item}
-            {value > 1 && ` * ${value}`}
+            {quantity > 1 && ` * ${quantity}`}
           </Content>
         </DivWrap>
         <DeleteIcon onClick={onClick(item)}>
           <AiOutlineClose size={'22px'} color={'#61666B'} />
         </DeleteIcon>
       </CardWrap>
-
-      <Counter {...componentProps} handleIncrease={handleIncrement} handleDecrease={handleDecrement} />
+      <Counter
+        value={quantity}
+        handleIncrease={() => handleIncrement()}
+        handleDecrease={() => handleDecrement()}
+      />
     </RootWrap>
   );
 };
 
-export default ItemListCard;
+export default React.memo(ItemListCard);
 
 const RootWrap = styled.div`
   position: relative;
