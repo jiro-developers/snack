@@ -1,5 +1,5 @@
 'use client';
-import React, { createContext, useContext, useState, useCallback, useRef, useEffect } from 'react';
+import React, { createContext, useContext, useState, useCallback, useRef } from 'react';
 
 export const TOAST_VARIANT = ['success', 'error'] as const;
 export type ToastVariantType = (typeof TOAST_VARIANT)[number];
