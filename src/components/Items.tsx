@@ -1,17 +1,22 @@
 'use client';
-import React, { SetStateAction } from 'react';
+
+import React, { SetStateAction, useCallback } from 'react';
 
 import NextImage from 'next/image';
 import { AiOutlineCheck } from 'react-icons/ai';
 import styled, { css } from 'styled-components';
 
+
+
+import { useToastContext } from '@/context/toastContext';
 import { Item, Product } from '@/type/itemType';
 
 import { colors } from '../../core/colors';
 import { media } from '../../core/style.util/css.util';
 
 
-interface Props {
+
+interface ItemsProps {
   itemStatus: Product;
   items: {
     alt: string;
@@ -21,42 +26,41 @@ interface Props {
   selectItem: Item[];
 }
 
-const Items: React.FC<Props> = (props) => {
-  const { itemStatus, items, selectItem, setSelectItem } = props;
+const Items: React.FC<ItemsProps> = ({ itemStatus, items, selectItem, setSelectItem }) => {
+  const { createToast } = useToastContext();
 
-  const handleSelectItem = (event: React.MouseEvent<HTMLDivElement>) => {
-    const clickedItem = event.currentTarget.textContent as string;
+  const handleSelectItem = useCallback((clickedItem: string) => {
+    setSelectItem((prevSelectItem) => {
+      const existingItemIndex = prevSelectItem.findIndex(item => item.item === clickedItem);
 
-    setSelectItem((prev) => {
-      const hasItems = prev.find(({ item }) => item === clickedItem);
-      if (hasItems) {
-        return prev;
+      if (existingItemIndex > -1) {
+        const existingItem = prevSelectItem[existingItemIndex];
+
+        if (existingItem.quantity === 1) {
+          return prevSelectItem.filter((_, index) => index !== existingItemIndex);
+        } else {
+          createToast(`${clickedItem}는 이미 ${existingItem.quantity}개 선택되어 있습니다.`, 'error');
+          return prevSelectItem;
+        }
+      } else {
+        return [...prevSelectItem, { type: itemStatus, item: clickedItem, quantity: 1 }];
       }
-
-      return [...prev, { type: itemStatus, item: clickedItem, quantity: 1 }];
     });
-  };
+  }, [setSelectItem, createToast, itemStatus]);
 
   return (
     <RootWrap>
       {items.map((item, index) => {
         const { alt } = item;
-
-        const replaceSlash = alt.replaceAll('|', '/');
-        const replaceSpace = replaceSlash.replaceAll(' ', '');
-
-        const src = `/images/${itemStatus}/${replaceSpace}.jpg`;
-
-        const isSelected = selectItem.find(({ item }) => item === alt);
+        const src = `/images/${itemStatus}/${alt.replaceAll('|', '/').replaceAll(' ', '')}.jpg`;
+        const isSelected = !!selectItem.find(({ item }) => item === alt);
 
         return (
-          <ItemWrap key={index} onClick={handleSelectItem} isSelected={isSelected}>
-
-            <IconWrap isSelected={isSelected}>
+          <ItemWrap key={index} onClick={() => handleSelectItem(alt)} >
+            <IconWrap $isSelected={isSelected}>
               {isSelected && <AiOutlineCheck color={colors.white} />}
             </IconWrap>
-            <ImageWrap src={src} alt={alt} width={200} height={200} isSelected={isSelected} />
-
+            <ImageWrap src={src} alt={alt} width={200} height={200} $isSelected={isSelected} />
             <Description>{alt}</Description>
           </ItemWrap>
         );
@@ -64,6 +68,7 @@ const Items: React.FC<Props> = (props) => {
     </RootWrap>
   );
 };
+
 export default Items;
 
 const RootWrap = styled.div`
@@ -71,7 +76,6 @@ const RootWrap = styled.div`
   gap: 32px;
   flex-wrap: wrap;
   justify-content: center;
-
   margin-top: 20px;
   padding: 0 28px;
 
@@ -80,26 +84,21 @@ const RootWrap = styled.div`
   }
 `;
 
-
-
-const IconWrap = styled.div<{ isSelected?: Item }>`
+const IconWrap = styled.div<{ $isSelected?: boolean }>`
   position: absolute;
   right: 10px;
   top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 24px;
   height: 24px;
   border-radius: 8px;
-  
-  border: ${({ isSelected }) => (isSelected ? 'none' : `1px solid ${colors.grey100}`)};
-
-  background-color: ${({ isSelected }) => (isSelected ? colors.black : colors.white)};
+  border: ${({ $isSelected }) => ($isSelected ? 'none' : `1px solid ${colors.grey100}`)};
+  background-color: ${({ $isSelected }) => ($isSelected ? colors.black : colors.white)};
 `;
 
-const ImageWrap = styled(NextImage)<{ isSelected?: Item }>`
+const ImageWrap = styled(NextImage)<{ $isSelected?: boolean }>`
   width: 200px;
   height: 200px;
   object-fit: contain;
@@ -109,30 +108,22 @@ const ImageWrap = styled(NextImage)<{ isSelected?: Item }>`
     border-radius: 8px;
   }
 
-  ${({ isSelected }) =>
-          isSelected &&
-          css`
-            border: 1px solid ${colors.black};
-            border-radius: 8px;
-            pointer-events: none;
-          `};
+  ${({ $isSelected }) =>
+    $isSelected &&
+    css`
+      border: 1px solid ${colors.black};
+      border-radius: 8px;
+      pointer-events: none;
+    `};
 `;
 
-const ItemWrap = styled.div<{ isSelected?: Item }>`
+const ItemWrap = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   width: 200px;
   height: 268px;
-  
   cursor: pointer;
-  pointer-events: ${({ isSelected }) => (isSelected ? 'none' : 'auto')};
-  
-  &:hover{
-    ${IconWrap}{
-      background: ${colors.grey025};
-    }
-  }
 `;
 
 const Description = styled.div`

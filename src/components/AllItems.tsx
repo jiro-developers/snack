@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import styled, { keyframes } from 'styled-components';
 
@@ -13,33 +13,40 @@ import { Item, Product } from '@/type/itemType';
 
 import { colors } from '../../core/colors';
 
+
 interface Props {
   snack: { alt: string; src: string }[];
   drink: { alt: string; src: string }[];
 }
 
-
-const AllItems = (props: Props) => {
-
+const AllItems: React.FC<Props> = (props) => {
   const { snack, drink } = props;
   const [itemList, setItemList] = useState<Product>('snack');
   const [selectItem, setSelectItem] = useState<Item[]>([]);
 
   const { createToast, toasts } = useToastContext();
 
+
   const items = itemList === 'snack' ? snack : drink;
 
-  const copy = async () => {
+  const copy = useCallback(async () => {
     const selectedItemList = selectItem
       .map(({ item, quantity }) => {
-        return `${item} * ${quantity}`;
+        return `${item} * ${quantity}`
       })
-      .join('\n');
+      .join('\n')
 
-    await navigator.clipboard.writeText(selectedItemList);
-
-    createToast('주문 목록을 복사했어요.', 'success');
-  };
+    if (typeof window !== 'undefined' && window.navigator && window.navigator.clipboard) {
+      try {
+        await window.navigator.clipboard.writeText(selectedItemList)
+        createToast('주문 목록을 복사했어요.', 'success')
+      } catch (error) {
+        createToast('복사에 실패했습니다.', 'error')
+      }
+    } else {
+      createToast('이 환경에서는 복사 기능을 지원하지 않습니다.', 'error')
+    }
+  }, [selectItem, createToast])
 
   const deleteItem = (id: string) => {
     return () =>
@@ -60,10 +67,10 @@ const AllItems = (props: Props) => {
         <Title>주문 목록</Title>
         <List>
           {selectItem.map((product, index) => {
-            return <ItemListCard product={product} onClick={deleteItem} setSelectItem={setSelectItem} key={index} />;
+            return <ItemListCard product={product}  onClick={deleteItem} setSelectItem={setSelectItem} key={index} />;
           })}
         </List>
-        <CopyButtonWrap value='복사하기' onClick={copy}>
+        <CopyButtonWrap onClick={copy}>
           복사하기
         </CopyButtonWrap>
       </SelectList>
