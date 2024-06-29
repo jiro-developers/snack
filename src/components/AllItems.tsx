@@ -1,5 +1,6 @@
 'use client';
-import React, { useCallback, useState } from 'react';
+
+import React, { useState } from 'react';
 
 import styled, { keyframes } from 'styled-components';
 
@@ -13,40 +14,30 @@ import { Item, Product } from '@/type/itemType';
 
 import { colors } from '../../core/colors';
 
-
-interface Props {
+interface AllItemsProps {
   snack: { alt: string; src: string }[];
   drink: { alt: string; src: string }[];
 }
 
-const AllItems: React.FC<Props> = (props) => {
-  const { snack, drink } = props;
+const AllItems: React.FC<AllItemsProps> = ({ snack, drink }) => {
   const [itemList, setItemList] = useState<Product>('snack');
   const [selectItem, setSelectItem] = useState<Item[]>([]);
 
-  const { createToast, toasts } = useToastContext();
-
+  const { toasts, createToast, dismissToast } = useToastContext();
 
   const items = itemList === 'snack' ? snack : drink;
 
-  const copy = useCallback(async () => {
+  const copy = async () => {
     const selectedItemList = selectItem
       .map(({ item, quantity }) => {
-        return `${item} * ${quantity}`
+        return `${item} * ${quantity}`;
       })
-      .join('\n')
+      .join('\n');
 
-    if (typeof window !== 'undefined' && window.navigator && window.navigator.clipboard) {
-      try {
-        await window.navigator.clipboard.writeText(selectedItemList)
-        createToast('주문 목록을 복사했어요.', 'success')
-      } catch (error) {
-        createToast('복사에 실패했습니다.', 'error')
-      }
-    } else {
-      createToast('이 환경에서는 복사 기능을 지원하지 않습니다.', 'error')
-    }
-  }, [selectItem, createToast])
+    await navigator.clipboard.writeText(selectedItemList);
+
+    createToast('주문 목록을 복사했어요.', 'success', 3000, 300);
+  };
 
   const deleteItem = (id: string) => {
     return () =>
@@ -77,15 +68,18 @@ const AllItems: React.FC<Props> = (props) => {
 
       <Portal>
         <ToastWrap>
-          {toasts.map((toast) => {
-            return (
-              <ToastListWrap key={toast.id}>
-                <Toast id={toast.id} variant={toast.variant}>
-                  {toast.message}
-                </Toast>
-              </ToastListWrap>
-            );
-          })}
+          {toasts.map((toast) => (
+            <Toast
+              key={toast.id}
+              id={toast.id}
+              variant={toast.variant}
+              onDismiss={dismissToast}
+              duration={toast.duration}
+              fadeOutDuration={toast.fadeOutDuration}
+            >
+              {toast.message}
+            </Toast>
+          ))}
         </ToastWrap>
       </Portal>
     </RootWrap>
@@ -184,13 +178,4 @@ const ToastWrap = styled.div`
   transform: translateX(-50%);
 `;
 
-const toast = keyframes`
-  from {
-    transform: translateY(calc(-100% - 20px));
-  }
-`;
 
-const ToastListWrap = styled.div`
-  animation: ${toast} 800ms cubic-bezier(0, 0.46, 0, 1.04) both;
-  will-change: transform;
-`;
