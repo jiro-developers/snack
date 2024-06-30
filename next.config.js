@@ -4,6 +4,15 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  redirects: async () => {
+    return [
+      {
+        source: '/',
+        destination: '/order/snack',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
