@@ -1,65 +1,60 @@
 'use client';
 
-import React, { SetStateAction, useCallback } from 'react';
+import React, { useCallback } from 'react';
 
 import NextImage from 'next/image';
 import { AiOutlineCheck } from 'react-icons/ai';
 import styled, { css } from 'styled-components';
 
-
-
+import { useOrderContext } from '@/context/OrderContext';
 import { useToastContext } from '@/context/toastContext';
-import { Item, Product } from '@/type/itemType';
+import useGetManyItem from '@/hook/useGetManyItem';
+import { Product } from '@/type/itemType';
 
 import { colors } from '../../core/colors';
 import { media } from '../../core/style.util/css.util';
 
-
-
 interface ItemsProps {
-  itemStatus: Product;
-  items: {
-    alt: string;
-    src: string;
-  }[];
-  setSelectItem: React.Dispatch<SetStateAction<Item[]>>;
-  selectItem: Item[];
+  product: Product;
 }
 
-const Items: React.FC<ItemsProps> = ({ itemStatus, items, selectItem, setSelectItem }) => {
+const ItemList: React.FC<ItemsProps> = ({ product }) => {
+  const { selectedItemList, setSelectedItemList } = useOrderContext();
+  const itemList = useGetManyItem({ product: product });
   const { createToast } = useToastContext();
 
-  const handleSelectItem = useCallback((clickedItem: string) => {
-    setSelectItem((prevSelectItem) => {
-      const existingItemIndex = prevSelectItem.findIndex(item => item.item === clickedItem);
+  const handleSelectItem = useCallback(
+    (clickedItem: string) => {
+      setSelectedItemList((prevSelectedItem) => {
+        const existingItemIndex = prevSelectedItem.findIndex((item) => item.item === clickedItem);
 
-      if (existingItemIndex > -1) {
-        const existingItem = prevSelectItem[existingItemIndex];
+        if (existingItemIndex > -1) {
+          const existingItem = prevSelectedItem[existingItemIndex];
 
-        if (existingItem.quantity === 1) {
-          return prevSelectItem.filter((_, index) => index !== existingItemIndex);
+          if (existingItem.quantity === 1) {
+            return prevSelectedItem.filter((_, index) => index !== existingItemIndex);
+          } else {
+            createToast(`${clickedItem}는 이미 ${existingItem.quantity}개 선택되어 있습니다.`, 'error');
+            return prevSelectedItem;
+          }
         } else {
-          createToast(`${clickedItem}는 이미 ${existingItem.quantity}개 선택되어 있습니다.`, 'error');
-          return prevSelectItem;
+          return [...prevSelectedItem, { type: product, item: clickedItem, quantity: 1 }];
         }
-      } else {
-        return [...prevSelectItem, { type: itemStatus, item: clickedItem, quantity: 1 }];
-      }
-    });
-  }, [setSelectItem, createToast, itemStatus]);
+      });
+    },
+    [setSelectedItemList, createToast, product]
+  );
 
   return (
     <RootWrap>
-      {items.map((item, index) => {
+      {itemList.map((item, index) => {
         const { alt } = item;
-        const src = `/images/${itemStatus}/${alt.replaceAll('|', '/').replaceAll(' ', '')}.jpg`;
-        const isSelected = !!selectItem.find(({ item }) => item === alt);
+        const src = `/images/${product}/${alt.replaceAll('|', '/').replaceAll(' ', '')}.jpg`;
+        const isSelected = !!selectedItemList.find(({ item }) => item === alt);
 
         return (
-          <ItemWrap key={index} onClick={() => handleSelectItem(alt)} >
-            <IconWrap $isSelected={isSelected}>
-              {isSelected && <AiOutlineCheck color={colors.white} />}
-            </IconWrap>
+          <ItemWrap key={index} onClick={() => handleSelectItem(alt)}>
+            <IconWrap $isSelected={isSelected}>{isSelected && <AiOutlineCheck color={colors.white} />}</IconWrap>
             <ImageWrap src={src} alt={alt} width={200} height={200} $isSelected={isSelected} />
             <Description>{alt}</Description>
           </ItemWrap>
@@ -69,7 +64,7 @@ const Items: React.FC<ItemsProps> = ({ itemStatus, items, selectItem, setSelectI
   );
 };
 
-export default Items;
+export default ItemList;
 
 const RootWrap = styled.div`
   display: flex;

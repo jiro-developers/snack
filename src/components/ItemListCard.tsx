@@ -1,4 +1,4 @@
-import React, { SetStateAction } from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 
 import NextImage from 'next/image';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -10,17 +10,17 @@ import { Item } from '@/type/itemType';
 interface ItemListCardProps {
   product: Item;
   onClick: (id: string) => () => void;
-  setSelectItem: React.Dispatch<SetStateAction<Item[]>>;
+  setSelectedItemList: Dispatch<SetStateAction<Array<Item>>>;
 }
 
-const ItemListCard: React.FC<ItemListCardProps> = ({ product, setSelectItem, onClick }) => {
+const ItemListCard: React.FC<ItemListCardProps> = ({ product, setSelectedItemList, onClick }) => {
   const { type, item, quantity } = product;
   const replaceSlash = item.replaceAll('|', '/');
   const replaceSpace = replaceSlash.replaceAll(' ', '');
   const src = `/images/${type}/${replaceSpace}.jpg`;
 
   const handleIncrement = () => {
-    setSelectItem((items) =>
+    setSelectedItemList((items) =>
       items.map((itemData) => {
         if (itemData.item === product.item) {
           return { ...itemData, quantity: itemData.quantity + 1 };
@@ -31,7 +31,7 @@ const ItemListCard: React.FC<ItemListCardProps> = ({ product, setSelectItem, onC
   };
 
   const handleDecrement = () => {
-    setSelectItem((items) =>
+    setSelectedItemList((items) =>
       items.map((itemData) => {
         if (itemData.item === product.item && itemData.quantity > 1) {
           return { ...itemData, quantity: itemData.quantity - 1 };
@@ -45,7 +45,7 @@ const ItemListCard: React.FC<ItemListCardProps> = ({ product, setSelectItem, onC
     <RootWrap>
       <CardWrap>
         <DivWrap>
-          <Image src={src} alt={item} width={64} height={64}/>
+          <Image src={src} alt={item} width={64} height={64} />
           <Content>
             {item}
             {quantity > 1 && ` * ${quantity}`}
@@ -55,11 +55,7 @@ const ItemListCard: React.FC<ItemListCardProps> = ({ product, setSelectItem, onC
           <AiOutlineClose size={'22px'} color={'#61666B'} />
         </DeleteIcon>
       </CardWrap>
-      <Counter
-        value={quantity}
-        handleIncrease={() => handleIncrement()}
-        handleDecrease={() => handleDecrement()}
-      />
+      <Counter value={quantity} handleIncrease={() => handleIncrement()} handleDecrease={() => handleDecrement()} />
     </RootWrap>
   );
 };
