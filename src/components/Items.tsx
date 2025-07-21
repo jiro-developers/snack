@@ -9,7 +9,7 @@ import styled, { css } from 'styled-components';
 
 
 import { useToastContext } from '@/context/toastContext';
-import { Item, Product } from '@/type/itemType';
+import { Item, Product, ItemData } from '@/type/itemType';
 
 import { colors } from '../../core/colors';
 import { media } from '../../core/style.util/css.util';
@@ -18,10 +18,7 @@ import { media } from '../../core/style.util/css.util';
 
 interface ItemsProps {
   itemStatus: Product;
-  items: {
-    alt: string;
-    src: string;
-  }[];
+  items: ItemData[];
   setSelectItem: React.Dispatch<SetStateAction<Item[]>>;
   selectItem: Item[];
 }
@@ -51,8 +48,8 @@ const Items: React.FC<ItemsProps> = ({ itemStatus, items, selectItem, setSelectI
   return (
     <RootWrap>
       {items.map((item, index) => {
-        const { alt } = item;
-        const src = `/images/${itemStatus}/${alt.replaceAll('|', '/').replaceAll(' ', '')}.jpg`;
+        const { alt, localFilename } = item;
+        const src = `/images/${itemStatus}/${localFilename}`;
         const isSelected = !!selectItem.find(({ item }) => item === alt);
 
         return (
@@ -117,7 +114,7 @@ const ImageWrap = styled(NextImage)<{ $isSelected?: boolean }>`
     `};
 `;
 
-const ItemWrap = styled.div`
+const ItemWrap = styled. div`
   position: relative;
   display: flex;
   flex-direction: column;

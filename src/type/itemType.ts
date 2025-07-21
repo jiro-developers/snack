@@ -5,3 +5,9 @@ export type Item = {
 };
 
 export type Product = 'snack' | 'drink';
+
+export interface ItemData {
+  alt: string;
+  src: string;
+  localFilename: string;
+}

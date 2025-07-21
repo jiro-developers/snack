@@ -10,13 +10,13 @@ import { Portal } from '@/components/Portal';
 import TabItem from '@/components/TabItem';
 import Toast from '@/components/Toast';
 import { useToastContext } from '@/context/toastContext';
-import { Item, Product } from '@/type/itemType';
+import { Item, Product, ItemData } from '@/type/itemType';
 
 import { colors } from '../../core/colors';
 
 interface AllItemsProps {
-  snack: { alt: string; src: string }[];
-  drink: { alt: string; src: string }[];
+  snack: ItemData[];
+  drink: ItemData[];
 }
 
 const AllItems: React.FC<AllItemsProps> = ({ snack, drink }) => {

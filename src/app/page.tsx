@@ -4,15 +4,11 @@ import * as fs from 'fs';
 import path from 'path';
 
 import AllItems from '@/components/AllItems';
+import { ItemData } from '@/type/itemType';
 
 interface AllItemsType {
-  DRINK_DATA: Item[];
-  SNACK_DATA: Item[];
-}
-
-interface Item {
-  alt: string;
-  src: string;
+  DRINK_DATA: ItemData[];
+  SNACK_DATA: ItemData[];
 }
 
 const getFetchJSONData = async(filePath: string): Promise<AllItemsType> =>{
