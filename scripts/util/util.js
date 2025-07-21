@@ -26,7 +26,32 @@ const updateDirectory = (dir) => {
   console.log(`${dir} 폴더를 생성했습니다.`);
 };
 
+const sanitizeFilename = (altText, usedNames = new Set()) => {
+  // Remove capacity information (text in parentheses)
+  let cleanName = altText.replace(/\([^)]*\)/g, '');
+  
+  // Remove special characters that cause issues with URLs/file systems
+  // Keep Korean characters, numbers, letters, and basic safe characters
+  cleanName = cleanName.replace(/[%()[\]{}|\\/:*?"<>]/g, '');
+  
+  // Remove extra spaces and trim
+  cleanName = cleanName.replace(/\s+/g, '').trim();
+  
+  // Handle duplicate names
+  let finalName = cleanName;
+  let counter = 1;
+  
+  while (usedNames.has(finalName)) {
+    finalName = `${cleanName}_${counter}`;
+    counter++;
+  }
+  
+  usedNames.add(finalName);
+  return finalName;
+};
+
 module.exports = {
   downloadImage,
   updateDirectory,
+  sanitizeFilename,
 };
