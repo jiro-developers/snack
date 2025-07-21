@@ -21,13 +21,8 @@ const json = fs.readFileSync(path.join(__dirname, json_file), 'utf8');
     updateDirectory(drinkDir);
 
     for (const item of drinkData) {
-      if (item.src && item.alt) {
-        const itemAlt = item.alt;
-
-        const removeSlashItemAlt = itemAlt.replaceAll('/', '|');
-        const fileName = (removeSlashItemAlt + '.jpg').replaceAll(' ', '');
-
-        const destPath = path.join(__dirname, drink_directory, fileName);
+      if (item.src && item.localFilename) {
+        const destPath = path.join(__dirname, drink_directory, item.localFilename);
 
         await downloadImage(item.src, destPath);
       }

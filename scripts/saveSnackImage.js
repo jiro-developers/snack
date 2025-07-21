@@ -21,19 +21,14 @@ const json = fs.readFileSync(path.join(__dirname, json_file), 'utf8');
     updateDirectory(snackDir);
 
     for (const item of snackData) {
-      if (item.src && item.alt) {
-        const itemAlt = item.alt;
-
-        const removeSlashItemAlt = itemAlt.replaceAll('/', '|');
-        const fileName = (removeSlashItemAlt + '.jpg').replaceAll(' ', '');
-
-        const destPath = path.join(__dirname, snack_directory, fileName);
+      if (item.src && item.localFilename) {
+        const destPath = path.join(__dirname, snack_directory, item.localFilename);
 
         await downloadImage(item.src, destPath);
       }
     }
 
-    console.log('음료 이미지 저장이 완료되었습니다.');
+    console.log('스낵 이미지 저장이 완료되었습니다.');
   } catch (error) {
     console.error('JSON 파싱 오류:', error);
   }
