@@ -14,10 +14,8 @@ interface ItemListCardProps {
 }
 
 const ItemListCard: React.FC<ItemListCardProps> = ({ product, setSelectItem, onClick }) => {
-  const { type, item, quantity } = product;
-  const replaceSlash = item.replaceAll('|', '/');
-  const replaceSpace = replaceSlash.replaceAll(' ', '');
-  const src = `/images/${type}/${replaceSpace}.jpg`;
+  const { type, item, quantity, localFilename } = product;
+  const src = `/images/${type}/${localFilename}`;
 
   const handleIncrement = () => {
     setSelectItem((items) =>

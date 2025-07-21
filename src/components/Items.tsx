@@ -40,10 +40,14 @@ const Items: React.FC<ItemsProps> = ({ itemStatus, items, selectItem, setSelectI
           return prevSelectItem;
         }
       } else {
-        return [...prevSelectItem, { type: itemStatus, item: clickedItem, quantity: 1 }];
+        // Find the corresponding ItemData to get the localFilename
+        const itemData = items.find(item => item.alt === clickedItem);
+        const localFilename = itemData?.localFilename || '';
+        
+        return [...prevSelectItem, { type: itemStatus, item: clickedItem, quantity: 1, localFilename }];
       }
     });
-  }, [setSelectItem, createToast, itemStatus]);
+  }, [setSelectItem, createToast, itemStatus, items]);
 
   return (
     <RootWrap>
