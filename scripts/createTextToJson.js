@@ -6,10 +6,14 @@ const path = require('path');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const cheerio = require('cheerio');
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { sanitizeFilename } = require('./util/util');
+
 //TODO 파일 정리 하기.
 const convertHTMLtoJSON = (html) =>{
   const $ = cheerio.load(html);
   const images = [];
+  const usedNames = new Set();
 
   // 첫 상품이 가지고 있는 카드 class
   const newFormatCards = $('.flex.h-fit.w-60.flex-col.items-center.gap-3.p-3');
@@ -38,11 +42,14 @@ const convertHTMLtoJSON = (html) =>{
           ? `${orderUnit}개 묶음 ${productName} (${capacity})`.trim()
           : `${productName} (${capacity})`.trim();
 
-        images.push({ alt: constructedAlt, src });
+        // Generate sanitized filename
+        const cleanFileName = sanitizeFilename(constructedAlt, usedNames);
+        const localFilename = cleanFileName + '.jpg';
+
+        images.push({ alt: constructedAlt, src, localFilename });
       }
     });
   } else {
-    // Handle old format
     $('.thumb img').each((index, element) => {
       const img = $(element);
       const src = img.attr('src');
@@ -55,7 +62,11 @@ const convertHTMLtoJSON = (html) =>{
 
         const constructedAlt = `${itemUnit} ${itemName} ${itemCapacity}`.trim();
 
-        images.push({ alt: constructedAlt, src });
+        // Generate sanitized filename
+        const cleanFileName = sanitizeFilename(constructedAlt, usedNames);
+        const localFilename = cleanFileName + '.jpg';
+
+        images.push({ alt: constructedAlt, src, localFilename });
       }
     });
   }
