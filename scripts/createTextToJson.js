@@ -15,8 +15,14 @@ const convertHTMLtoJSON = (html) =>{
   const images = [];
   const usedNames = new Set();
 
-  // 첫 상품이 가지고 있는 카드 class
-  const newFormatCards = $('.flex.h-fit.w-60.flex-col.items-center.gap-3.p-3');
+  // 첫 상품이 가지고 있는 카드 class - relative div가 연속으로 들어가는 구조를 찾기
+  const newFormatCardsNext = $('div').filter((index, element) => {
+    const $el = $(element);
+    return $el.find('div.relative > div.relative').length > 0;
+  });
+
+  // 부모 카드 스타일 변경으로 인한 구조 확인 후 이전값으로 기존 사용했떤 구조 지켜주게 수정
+  const newFormatCards = newFormatCardsNext.prev();
 
   if (newFormatCards.length > 0) {
     newFormatCards.each((index, element) => {
