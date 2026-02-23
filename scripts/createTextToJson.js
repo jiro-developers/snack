@@ -40,7 +40,7 @@ const convertHTMLtoJSON = (html) =>{
 
         const productDetails = cardChildren.eq(2);
         const productInfoDiv = productDetails.children().eq(1).children().eq(0);
-        const productName = productInfoDiv.children().eq(0).text().trim();
+        const productName = productInfoDiv.children().eq(0).text().trim().replace(/^\.\.\s*/, '');
         const capacity = productInfoDiv.children().eq(1).children().eq(0).text().trim();
 
         // Construct alt text - only include "개 묶음" if orderUnit has a valid value
@@ -63,7 +63,7 @@ const convertHTMLtoJSON = (html) =>{
       if (src) {
         // Get item details from the old format
         const itemUnit = img.closest('.item-box').find('.item-unit').text().trim();
-        const itemName = img.closest('.item-box').find('.item-name').text().trim();
+        const itemName = img.closest('.item-box').find('.item-name').text().trim().replace(/^\.\.\s*/, '');
         const itemCapacity = img.closest('.item-box').find('.item-capacity').text().trim();
 
         const constructedAlt = `${itemUnit} ${itemName} ${itemCapacity}`.trim();
