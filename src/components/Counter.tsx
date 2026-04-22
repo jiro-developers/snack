@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-import styled from 'styled-components';
+import { Minus, Plus } from 'lucide-react';
 
 export interface CounterProps {
   className?: string;
@@ -12,72 +11,30 @@ export interface CounterProps {
   handleDecrease: () => void;
 }
 
-export const Counter: React.FC<CounterProps> = (props) => {
-  const { className, handleIncrease, handleDecrease, value, onDecrease, onIncrease } = props;
-
+export const Counter: React.FC<CounterProps> = ({ className, handleIncrease, handleDecrease, value, onDecrease, onIncrease }) => {
   return (
-    <CounterWrap className={className}>
-      <IconWrap
+    <div className={`flex items-center gap-1.5 ${className ?? ''}`}>
+      <button
+        className="flex items-center justify-center w-8 h-8 rounded-full bg-ikea-gray-100 hover:bg-ikea-gray-200 text-ikea-gray-700 transition-all"
         onClick={() => {
           handleDecrease();
           onDecrease?.();
         }}
       >
-        <Icon>
-          <AiOutlineMinus />
-        </Icon>
-      </IconWrap>
-      <CounterValue>{value}</CounterValue>
-      <IconWrap
+        <Minus className="w-3.5 h-3.5" />
+      </button>
+      <div className="flex justify-center items-center min-w-[28px] h-7 font-display font-bold text-ikea-gray-900 text-sm text-center">
+        {value}
+      </div>
+      <button
+        className="flex items-center justify-center w-8 h-8 rounded-full bg-ikea-gray-100 hover:bg-ikea-gray-200 text-ikea-gray-700 transition-all"
         onClick={() => {
           handleIncrease();
           onIncrease?.();
         }}
       >
-        <Icon>
-          <AiOutlinePlus />
-        </Icon>
-      </IconWrap>
-    </CounterWrap>
+        <Plus className="w-3.5 h-3.5" />
+      </button>
+    </div>
   );
 };
-
-const CounterWrap = styled.div`
-  display: flex;
-  column-gap: 4px;
-`;
-
-const CounterValue = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-
-  width: 32px;
-  height: 32px;
-  border-radius: 4px;
-  border: 1px solid #e3e5e8;
-`;
-const IconWrap = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-
-  border-radius: 4px;
-  border: 1px solid #e3e5e8;
-
-  width: 32px;
-  height: 32px;
-
-  cursor: pointer;
-`;
-
-const Icon = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-
-  height: 100%;
-`;

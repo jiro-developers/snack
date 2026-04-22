@@ -1,10 +1,8 @@
 import React, { SetStateAction } from 'react';
 
+import { Minus, Plus, X } from 'lucide-react';
 import NextImage from 'next/image';
-import { AiOutlineClose } from 'react-icons/ai';
-import styled from 'styled-components';
 
-import { Counter } from '@/components/Counter';
 import { Item } from '@/type/itemType';
 
 interface ItemListCardProps {
@@ -40,84 +38,53 @@ const ItemListCard: React.FC<ItemListCardProps> = ({ product, setSelectItem, onC
   };
 
   return (
-    <RootWrap>
-      <CardWrap>
-        <DivWrap>
-          <Image src={src} alt={item} width={64} height={64}/>
-          <Content>
-            {item}
-            {quantity > 1 && ` * ${quantity}`}
-          </Content>
-        </DivWrap>
-        <DeleteIcon onClick={onClick(item)}>
-          <AiOutlineClose size={'22px'} color={'#61666B'} />
-        </DeleteIcon>
-      </CardWrap>
-      <Counter
-        value={quantity}
-        handleIncrease={() => handleIncrement()}
-        handleDecrease={() => handleDecrement()}
+    <div className="flex items-start gap-3 py-3 border-b border-ikea-gray-100 last:border-0">
+      {/* 이미지 */}
+      <NextImage
+        src={src}
+        alt={item}
+        width={64}
+        height={64}
+        className="w-16 h-16 object-contain rounded-lg bg-ikea-gray-50 flex-shrink-0"
       />
-    </RootWrap>
+
+      {/* 상품 정보 + 수량 */}
+      <div className="flex-1 min-w-0">
+        <div className="flex items-start justify-between gap-2">
+          <p className="text-sm text-ikea-gray-800 font-medium leading-snug line-clamp-2">
+            {item}
+          </p>
+          <button
+            className="flex-shrink-0 p-1 rounded-md text-ikea-gray-500 hover:text-red-500 hover:bg-red-50 transition-colors"
+            onClick={onClick(item)}
+          >
+            <X size={16} />
+          </button>
+        </div>
+
+        {/* 수량 조절 */}
+        <div className="flex items-center gap-2 mt-2">
+          <div className="flex items-center bg-ikea-gray-100 rounded-full">
+            <button
+              className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-ikea-gray-200 text-ikea-gray-600 transition-colors"
+              onClick={handleDecrement}
+            >
+              <Minus className="w-3.5 h-3.5" />
+            </button>
+            <span className="min-w-[28px] text-center font-display font-bold text-sm text-ikea-gray-900">
+              {quantity}
+            </span>
+            <button
+              className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-ikea-gray-200 text-ikea-gray-600 transition-colors"
+              onClick={handleIncrement}
+            >
+              <Plus className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
 export default React.memo(ItemListCard);
-
-const RootWrap = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  row-gap: 16px;
-
-  margin: 20px 0;
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-`;
-
-const CardWrap = styled.div`
-  display: flex;
-  justify-content: space-between;
-
-  height: 64px;
-  width: 100%;
-`;
-
-const DivWrap = styled.div`
-  display: flex;
-`;
-
-const Image = styled(NextImage)`
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-`;
-
-const Content = styled.div`
-  display: flex;
-  align-items: center;
-
-  color: #000;
-  font-size: 16px;
-  line-height: 160%;
-
-  margin-left: 12px;
-`;
-
-const DeleteIcon = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 40px;
-
-  width: 40px;
-  height: 40px;
-
-  padding: 8px;
-`;
