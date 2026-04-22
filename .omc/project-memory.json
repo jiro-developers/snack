@@ -1,0 +1,471 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1774922798845,
+  "projectRoot": "/Users/hongseongjun/project/jiro/snack",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "next",
+        "version": "13.4.7",
+        "category": "fullstack"
+      },
+      {
+        "name": "react",
+        "version": "18.2.0",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "18.2.0",
+        "category": "frontend"
+      }
+    ],
+    "packageManager": "yarn",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "yarn build",
+    "testCommand": null,
+    "lintCommand": "yarn lint",
+    "devCommand": "yarn dev",
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint",
+      "text-to-json": "node scripts/createTextToJson.js",
+      "drink-images": "node scripts/saveDrinkImage.js",
+      "snack-images": "node scripts/saveSnackImage.js",
+      "save-images": "yarn drink-images && yarn snack-images",
+      "fetch-data": "ts-node --skipProject --compiler-options '{\"module\":\"CommonJS\",\"esModuleInterop\":true}' scripts/fetchSnackData.ts",
+      "db-stop": "npx supabase stop --backup",
+      "db-start": "npx supabase start"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": "type-based"
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "public",
+      "scripts",
+      "src"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 6,
+      "lastAccessed": 1774922798824,
+      "keyFiles": [
+        "CATEGORIES.json",
+        "DRINK.json",
+        "SNACK.json",
+        "drink.txt",
+        "snack.txt"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 4,
+      "lastAccessed": 1774922798824,
+      "keyFiles": [
+        "createTextToJson.js",
+        "fetchSnackData.ts",
+        "saveDrinkImage.js",
+        "saveSnackImage.js"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 0,
+      "lastAccessed": 1774922798829,
+      "keyFiles": []
+    },
+    "supabase": {
+      "path": "supabase",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1774922798829,
+      "keyFiles": [
+        "config.toml",
+        "seed.sql"
+      ]
+    },
+    "src/app": {
+      "path": "src/app",
+      "purpose": "Application code",
+      "fileCount": 4,
+      "lastAccessed": 1774922798830,
+      "keyFiles": [
+        "favicon.ico",
+        "globals.css",
+        "layout.tsx"
+      ]
+    },
+    "src/components": {
+      "path": "src/components",
+      "purpose": "UI components",
+      "fileCount": 10,
+      "lastAccessed": 1774922798830,
+      "keyFiles": [
+        "AllItems.tsx",
+        "CategoryFilter.tsx",
+        "Counter.tsx"
+      ]
+    },
+    "src/lib": {
+      "path": "src/lib",
+      "purpose": "Library code",
+      "fileCount": 2,
+      "lastAccessed": 1774922798831,
+      "keyFiles": [
+        "supabase.ts",
+        "utils.ts"
+      ]
+    },
+    "supabase/migrations": {
+      "path": "supabase/migrations",
+      "purpose": "Database migrations",
+      "fileCount": 1,
+      "lastAccessed": 1774922798831,
+      "keyFiles": [
+        "20260330_orders.sql"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "src/components/Items.tsx",
+      "accessCount": 39,
+      "lastAccessed": 1774925699346,
+      "type": "file"
+    },
+    {
+      "path": "src/components/AllItems.tsx",
+      "accessCount": 36,
+      "lastAccessed": 1774925931390,
+      "type": "file"
+    },
+    {
+      "path": "src/app/stats/page.tsx",
+      "accessCount": 20,
+      "lastAccessed": 1774926106311,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ItemListCard.tsx",
+      "accessCount": 17,
+      "lastAccessed": 1774920316024,
+      "type": "file"
+    },
+    {
+      "path": "src/components/TabItem.tsx",
+      "accessCount": 16,
+      "lastAccessed": 1774925923937,
+      "type": "file"
+    },
+    {
+      "path": "scripts/fetchSnackData.ts",
+      "accessCount": 15,
+      "lastAccessed": 1774925083808,
+      "type": "file"
+    },
+    {
+      "path": "src/components/CategoryFilter.tsx",
+      "accessCount": 14,
+      "lastAccessed": 1774918699080,
+      "type": "file"
+    },
+    {
+      "path": "src/type/itemType.ts",
+      "accessCount": 14,
+      "lastAccessed": 1774923343417,
+      "type": "file"
+    },
+    {
+      "path": "src/components/SearchCommand.tsx",
+      "accessCount": 14,
+      "lastAccessed": 1774925940752,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Counter.tsx",
+      "accessCount": 12,
+      "lastAccessed": 1774854173239,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 11,
+      "lastAccessed": 1774923345936,
+      "type": "directory"
+    },
+    {
+      "path": "src/app/globals.css",
+      "accessCount": 10,
+      "lastAccessed": 1774854082882,
+      "type": "file"
+    },
+    {
+      "path": "src/components/StatsTable.tsx",
+      "accessCount": 10,
+      "lastAccessed": 1774854222642,
+      "type": "file"
+    },
+    {
+      "path": "tailwind.config.ts",
+      "accessCount": 9,
+      "lastAccessed": 1774854092539,
+      "type": "file"
+    },
+    {
+      "path": "src/components/NameEntryDialog.tsx",
+      "accessCount": 9,
+      "lastAccessed": 1774854190642,
+      "type": "file"
+    },
+    {
+      "path": "src/components/AdminPinGate.tsx",
+      "accessCount": 9,
+      "lastAccessed": 1774854201837,
+      "type": "file"
+    },
+    {
+      "path": "src/app/api/orders/route.ts",
+      "accessCount": 9,
+      "lastAccessed": 1774923931804,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 7,
+      "lastAccessed": 1774923338235,
+      "type": "file"
+    },
+    {
+      "path": ".env.local.example",
+      "accessCount": 7,
+      "lastAccessed": 1774924043557,
+      "type": "file"
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "accessCount": 5,
+      "lastAccessed": 1774840994961,
+      "type": "file"
+    },
+    {
+      "path": "supabase/migrations/20260330_orders.sql",
+      "accessCount": 5,
+      "lastAccessed": 1774923359888,
+      "type": "file"
+    },
+    {
+      "path": "src/app/page.tsx",
+      "accessCount": 5,
+      "lastAccessed": 1774925237207,
+      "type": "file"
+    },
+    {
+      "path": "tsconfig.json",
+      "accessCount": 4,
+      "lastAccessed": 1774836665199,
+      "type": "file"
+    },
+    {
+      "path": "src/app/admin/page.tsx",
+      "accessCount": 4,
+      "lastAccessed": 1774921453369,
+      "type": "file"
+    },
+    {
+      "path": "src/lib/supabase.ts",
+      "accessCount": 4,
+      "lastAccessed": 1774923931349,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Toast.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1774836692524,
+      "type": "file"
+    },
+    {
+      "path": "next.config.js",
+      "accessCount": 3,
+      "lastAccessed": 1774920025096,
+      "type": "file"
+    },
+    {
+      "path": "postcss.config.js",
+      "accessCount": 2,
+      "lastAccessed": 1774836348830,
+      "type": "file"
+    },
+    {
+      "path": ".eslintrc.json",
+      "accessCount": 2,
+      "lastAccessed": 1774836387733,
+      "type": "file"
+    },
+    {
+      "path": "src/lib/utils.ts",
+      "accessCount": 2,
+      "lastAccessed": 1774842569473,
+      "type": "file"
+    },
+    {
+      "path": "scripts/util/util.js",
+      "accessCount": 2,
+      "lastAccessed": 1774920299441,
+      "type": "file"
+    },
+    {
+      "path": "src/app/api/admin/sync/route.ts",
+      "accessCount": 2,
+      "lastAccessed": 1774920451219,
+      "type": "file"
+    },
+    {
+      "path": "src/components",
+      "accessCount": 2,
+      "lastAccessed": 1774921309393,
+      "type": "directory"
+    },
+    {
+      "path": "public/SNACK.json",
+      "accessCount": 2,
+      "lastAccessed": 1774924291803,
+      "type": "file"
+    },
+    {
+      "path": "src/util/axiosInstance.ts",
+      "accessCount": 1,
+      "lastAccessed": 1774835653495,
+      "type": "file"
+    },
+    {
+      "path": "supabase.js",
+      "accessCount": 1,
+      "lastAccessed": 1774835654393,
+      "type": "file"
+    },
+    {
+      "path": "prisma/schema.prisma",
+      "accessCount": 1,
+      "lastAccessed": 1774835654841,
+      "type": "file"
+    },
+    {
+      "path": "src/styles/GlobalStyles.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1774835655771,
+      "type": "file"
+    },
+    {
+      "path": "src/constant/drink.ts",
+      "accessCount": 1,
+      "lastAccessed": 1774835662391,
+      "type": "file"
+    },
+    {
+      "path": "src/hook/useCounter.ts",
+      "accessCount": 1,
+      "lastAccessed": 1774835663194,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Portal.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1774835663648,
+      "type": "file"
+    },
+    {
+      "path": "public/DRINK.json",
+      "accessCount": 1,
+      "lastAccessed": 1774835673618,
+      "type": "file"
+    },
+    {
+      "path": "scripts/createTextToJson.js",
+      "accessCount": 1,
+      "lastAccessed": 1774835681616,
+      "type": "file"
+    },
+    {
+      "path": "components.json",
+      "accessCount": 1,
+      "lastAccessed": 1774836301938,
+      "type": "file"
+    },
+    {
+      "path": "src/hooks/useUser.ts",
+      "accessCount": 1,
+      "lastAccessed": 1774836489952,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ui/sheet.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1774836546028,
+      "type": "file"
+    },
+    {
+      "path": "src",
+      "accessCount": 1,
+      "lastAccessed": 1774836680817,
+      "type": "directory"
+    },
+    {
+      "path": "src/app/api/admin/verify/route.ts",
+      "accessCount": 1,
+      "lastAccessed": 1774839683193,
+      "type": "file"
+    },
+    {
+      "path": "public/CATEGORIES.json",
+      "accessCount": 1,
+      "lastAccessed": 1774843121334,
+      "type": "file"
+    },
+    {
+      "path": "scripts/saveSnackImage.js",
+      "accessCount": 1,
+      "lastAccessed": 1774920295607,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

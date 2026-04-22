@@ -1,14 +1,16 @@
+'use client';
+
 import React, { useEffect, useState } from 'react';
 
-import { AiOutlineClose } from 'react-icons/ai';
-import { BiCheckCircle, BiErrorCircle } from 'react-icons/bi';
-import styled, { css, keyframes } from 'styled-components';
+import { CheckCircle, XCircle, X } from 'lucide-react';
 
-import { ToastVariantType } from '@/context/toastContext';
+import { cn } from '@/lib/utils';
+
+type ToastVariantType = 'success' | 'error';
 
 const ICONS_BY_VARIANT = {
-  success: BiCheckCircle,
-  error: BiErrorCircle,
+  success: CheckCircle,
+  error: XCircle,
 };
 
 interface ToastProps {
@@ -22,14 +24,14 @@ interface ToastProps {
 }
 
 const Toast: React.FC<ToastProps> = ({
-                                       id,
-                                       variant,
-                                       children,
-                                       showIcon = false,
-                                       onDismiss,
-                                       duration,
-                                       fadeOutDuration,
-                                     }) => {
+  id,
+  variant,
+  children,
+  showIcon = false,
+  onDismiss,
+  duration,
+  fadeOutDuration,
+}) => {
   const [isVisible, setIsVisible] = useState(true);
   const Icon = ICONS_BY_VARIANT[variant];
 
@@ -49,77 +51,28 @@ const Toast: React.FC<ToastProps> = ({
   }, [id, duration, fadeOutDuration, onDismiss]);
 
   return (
-    <ToastWrap $variant={variant} $isVisible={isVisible} $fadeOutDuration={fadeOutDuration}>
-      {showIcon && (
-        <IconWrap>
-          <Icon size={24} />
-        </IconWrap>
+    <div
+      className={cn(
+        'relative flex items-center justify-center rounded w-[312px] my-4 transition-opacity',
+        variant === 'success' ? 'bg-black' : 'bg-red-500',
+        !isVisible && 'opacity-0'
       )}
-      <Content variant={variant}>{children}</Content>
-      <CloseButton onClick={() => onDismiss(id)}>
-        <AiOutlineClose size={18} />
-      </CloseButton>
-    </ToastWrap>
+      style={{ transition: !isVisible ? `opacity ${fadeOutDuration}ms ease-out` : undefined }}
+    >
+      {showIcon && (
+        <div className="flex-shrink-0 p-4 pl-4 py-4">
+          <Icon size={24} className="text-white" />
+        </div>
+      )}
+      <p className="flex-1 text-sm text-white text-center px-2 py-4">{children}</p>
+      <button
+        className="flex-shrink-0 bg-transparent border-none p-4 cursor-pointer text-white"
+        onClick={() => onDismiss(id)}
+      >
+        <X size={18} />
+      </button>
+    </div>
   );
 };
 
 export default Toast;
-
-const fadeOut = keyframes`
-  from { opacity: 1; }
-  to { opacity: 0; }
-`;
-
-const ToastWrap = styled.div<{ $variant: ToastVariantType; $isVisible: boolean; $fadeOutDuration: number }>`
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  color-scheme: light;
-  max-width: 100%;
-  width: 312px;
-  margin: 16px 0;
-  animation: ${({ $isVisible, $fadeOutDuration }) =>
-          !$isVisible
-                  ? css`
-          ${fadeOut} ${$fadeOutDuration}ms ease-out forwards
-        `
-                  : 'none'};
-
-  ${({ $variant }) => {
-    switch ($variant) {
-      case 'success': {
-        return css`
-          background-color: black;
-        `;
-      }
-      case 'error': {
-        return css`
-          background-color: red;
-        `;
-      }
-    }
-  }}
-`;
-const Content = styled.p<{ variant: ToastVariantType }>`
-  flex: 1;
-  font-size: 14px;
-  color: white;
-  text-align: center;
-`;
-
-const IconWrap = styled.div`
-  flex-shrink: 0;
-  padding: 16px 0px 16px 16px;
-`;
-
-const CloseButton = styled.button`
-  flex-shrink: 0;
-  border: none;
-  background: transparent;
-  padding: 16px;
-  cursor: pointer;
-
-  color: white;
-`;
