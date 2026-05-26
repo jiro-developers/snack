@@ -1,0 +1,76 @@
+{
+  "snack": [
+    {
+      "code": "AA01",
+      "name": "과자",
+      "type": "AA"
+    },
+    {
+      "code": "AA02",
+      "name": "쿠키",
+      "type": "AA"
+    },
+    {
+      "code": "AA03",
+      "name": "파이",
+      "type": "AA"
+    },
+    {
+      "code": "AA04",
+      "name": "초콜릿류",
+      "type": "AA"
+    },
+    {
+      "code": "AA05",
+      "name": "캔디류",
+      "type": "AA"
+    },
+    {
+      "code": "AA06",
+      "name": "껌류",
+      "type": "AA"
+    },
+    {
+      "code": "AA07",
+      "name": "비스켓류",
+      "type": "AA"
+    },
+    {
+      "code": "AA08",
+      "name": "씨리얼바",
+      "type": "AA"
+    },
+    {
+      "code": "AA09",
+      "name": "젤리류",
+      "type": "AA"
+    },
+    {
+      "code": "AA10",
+      "name": "견과류",
+      "type": "AA"
+    },
+    {
+      "code": "AA11",
+      "name": "워터젤리",
+      "type": "AA"
+    },
+    {
+      "code": "AA12",
+      "name": "아이스크림",
+      "type": "AA"
+    }
+  ],
+  "drink": [
+    {
+      "code": "BB01",
+      "name": "피자/치킨",
+      "type": "BB"
+    },
+    {
+      "code": "BB02",
+      "name": "패스트푸드/레스토랑",
+      "type": "BB"
+    }
+  ]
+}

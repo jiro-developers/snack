@@ -33,34 +33,34 @@ const TabItem: React.FC<Props> = ({ item, setItem }) => {
   return (
     <div className="sticky top-0 z-10 bg-white border-b border-ikea-gray-200">
       <div className="flex h-14">
-        <button
-          onClick={() => setItem('snack')}
-          className={cn(
-            'flex-1 relative font-display text-base transition-all duration-300',
-            item === 'snack'
-              ? 'text-ikea-blue font-bold'
-              : 'text-ikea-gray-500 hover:text-ikea-gray-700'
-          )}
-        >
-          과자
-          {item === 'snack' && (
-            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-10 h-[2px] bg-ikea-blue rounded-full" />
-          )}
-        </button>
-        <button
-          onClick={() => setItem('drink')}
-          className={cn(
-            'flex-1 relative font-display text-base transition-all duration-300',
-            item === 'drink'
-              ? 'text-ikea-blue font-bold'
-              : 'text-ikea-gray-500 hover:text-ikea-gray-700'
-          )}
-        >
-          음료
-          {item === 'drink' && (
-            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-10 h-[2px] bg-ikea-blue rounded-full" />
-          )}
-        </button>
+        {/*<button*/}
+        {/*  onClick={() => setItem('snack')}*/}
+        {/*  className={cn(*/}
+        {/*    'flex-1 relative font-display text-base transition-all duration-300',*/}
+        {/*    item === 'snack'*/}
+        {/*      ? 'text-ikea-blue font-bold'*/}
+        {/*      : 'text-ikea-gray-500 hover:text-ikea-gray-700'*/}
+        {/*  )}*/}
+        {/*>*/}
+        {/*  과자*/}
+        {/*  {item === 'snack' && (*/}
+        {/*    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-10 h-[2px] bg-ikea-blue rounded-full" />*/}
+        {/*  )}*/}
+        {/*</button>*/}
+        {/*<button*/}
+        {/*  onClick={() => setItem('drink')}*/}
+        {/*  className={cn(*/}
+        {/*    'flex-1 relative font-display text-base transition-all duration-300',*/}
+        {/*    item === 'drink'*/}
+        {/*      ? 'text-ikea-blue font-bold'*/}
+        {/*      : 'text-ikea-gray-500 hover:text-ikea-gray-700'*/}
+        {/*  )}*/}
+        {/*>*/}
+        {/*  음료*/}
+        {/*  {item === 'drink' && (*/}
+        {/*    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-10 h-[2px] bg-ikea-blue rounded-full" />*/}
+        {/*  )}*/}
+        {/*</button>*/}
       </div>
     </div>
   );

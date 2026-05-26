@@ -135,18 +135,19 @@ const AllItems: React.FC<AllItemsProps> = ({ snack, drink, categories }) => {
       </div>
       <div className="sticky bottom-0 flex gap-3 p-4 border-t border-ikea-gray-200">
         <button
-          className="flex-1 flex justify-center items-center gap-2 py-3 rounded-lg bg-white text-ikea-gray-700 border border-ikea-gray-200 hover:bg-ikea-gray-50 transition-colors duration-200 text-sm font-display font-semibold"
+          className="flex-1 flex justify-center items-center gap-2 py-3 rounded-lg bg-ikea-blue text-white border border-ikea-gray-200 hover:bg-ikea-blue-dark transition-colors duration-200 text-sm font-display font-semibold"
           onClick={copy}
         >
           <Copy className="w-4 h-4" />
           복사하기
         </button>
-        <button
-          className="flex-1 flex justify-center items-center py-3 rounded-lg bg-ikea-blue text-white text-sm font-display font-semibold hover:bg-ikea-blue-dark transition-colors duration-200"
-          onClick={submitOrder}
-        >
-          주문 제출
-        </button>
+        {/*TODO: supbase 죽어버림; */}
+        {/*<button*/}
+        {/*  className="flex-1 flex justify-center items-center py-3 rounded-lg bg-ikea-blue text-white text-sm font-display font-semibold hover:bg-ikea-blue-dark transition-colors duration-200"*/}
+        {/*  onClick={submitOrder}*/}
+        {/*>*/}
+        {/*  주문 제출*/}
+        {/*</button>*/}
       </div>
     </div>
   );
@@ -177,16 +178,17 @@ const AllItems: React.FC<AllItemsProps> = ({ snack, drink, categories }) => {
                 categories={categories || { snack: [], drink: [] }}
                 onSelectItem={handleSearchSelect}
               />
-              <Link href="/stats">
-                <button className="p-2 rounded-lg text-ikea-gray-500 hover:text-ikea-blue transition-colors duration-200">
-                  <BarChart3 className="h-5 w-5" />
-                </button>
-              </Link>
+              {/*TODO: supabase 죽어버림*/}
+              {/*<Link href="/stats">*/}
+              {/*  <button className="p-2 rounded-lg text-ikea-gray-500 hover:text-ikea-blue transition-colors duration-200">*/}
+              {/*    <BarChart3 className="h-5 w-5" />*/}
+              {/*  </button>*/}
+              {/*</Link>*/}
             </div>
           </div>
         </header>
 
-        <TabItem item={itemList} setItem={handleTabChange} />
+        {/*<TabItem item={itemList} setItem={handleTabChange} />*/}
 
         {currentCategories.length > 0 && (
           <CategoryFilter
@@ -207,7 +209,7 @@ const AllItems: React.FC<AllItemsProps> = ({ snack, drink, categories }) => {
       </div>
 
       {/* 데스크탑 사이드바 */}
-      <div className="hidden lg:flex flex-col sticky top-0 h-screen min-w-[480px] max-w-[560px] w-[560px] bg-ikea-gray-50 border-l border-ikea-gray-200">
+      <div className="hidden lg:flex flex-col sticky top-0 h-screen min-w-[560px] max-w-[560px] w-[560px] bg-ikea-gray-50 border-l border-ikea-gray-200">
         <div className="px-6 pt-6 pb-4">
           <h2 className="font-display text-base font-bold text-ikea-gray-800">
             주문 목록
