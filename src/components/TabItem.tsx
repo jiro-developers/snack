@@ -2,14 +2,14 @@
 
 import React, { useEffect, useState } from 'react';
 
-import { cn } from '@/lib/utils';
+// import { cn } from '@/lib/utils';
 
 interface Props {
   setItem: (value: 'snack' | 'drink') => void;
   item: string;
 }
 
-const TabItem: React.FC<Props> = ({ item, setItem }) => {
+const TabItem: React.FC<Props> = ({ item }) => {
   const [scrollPositions, setScrollPositions] = useState<{ [key: string]: number }>({});
 
   useEffect(() => {

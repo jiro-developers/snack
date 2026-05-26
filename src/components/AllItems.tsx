@@ -2,8 +2,7 @@
 
 import React, { useMemo, useState } from 'react';
 
-import { BarChart3, Copy, ShoppingCart } from 'lucide-react';
-import Link from 'next/link';
+import { Copy, ShoppingCart } from 'lucide-react';
 import { toast } from 'sonner';
 
 import CategoryFilter from '@/components/CategoryFilter';
@@ -11,7 +10,6 @@ import ItemListCard from '@/components/ItemListCard';
 import Items from '@/components/Items';
 import NameEntryDialog from '@/components/NameEntryDialog';
 import SearchCommand from '@/components/SearchCommand';
-import TabItem from '@/components/TabItem';
 import { Badge } from '@/components/ui/badge';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { useUser } from '@/hooks/useUser';
@@ -25,6 +23,7 @@ interface AllItemsProps {
 
 const AllItems: React.FC<AllItemsProps> = ({ snack, drink, categories }) => {
   const [itemList, setItemList] = useState<Product>('snack');
+  console.log(setItemList)
   const [selectItem, setSelectItem] = useState<Item[]>([]);
   const [sheetOpen, setSheetOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -40,10 +39,10 @@ const AllItems: React.FC<AllItemsProps> = ({ snack, drink, categories }) => {
     return items.filter((item) => item.category === selectedCategory);
   }, [items, selectedCategory]);
 
-  const handleTabChange = (tab: Product) => {
-    setItemList(tab);
-    setSelectedCategory(null);
-  };
+  // const handleTabChange = (tab: Product) => {
+  //   setItemList(tab);
+  //   setSelectedCategory(null);
+  // };
 
   const copy = async () => {
     const selectedItemList = selectItem
@@ -54,42 +53,42 @@ const AllItems: React.FC<AllItemsProps> = ({ snack, drink, categories }) => {
     toast.success('주문 목록을 복사했어요.');
   };
 
-  const submitOrder = async () => {
-    if (!userName) {
-      toast.error('이름을 먼저 입력해주세요.');
-      return;
-    }
-    if (selectItem.length === 0) {
-      toast.error('상품을 선택해주세요.');
-      return;
-    }
-
-    try {
-      const res = await fetch('/api/orders', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          user_name: userName,
-          items: selectItem.map((s) => ({
-            item_name: s.item,
-            item_type: s.type,
-            quantity: s.quantity,
-            item_image_url: `/images/${s.type}/${s.localFilename}`,
-            item_price: s.price ?? 0,
-          })),
-        }),
-      });
-
-      if (res.ok) {
-        toast.success('주문이 제출되었습니다!');
-        setSelectItem([]);
-      } else {
-        toast.error('주문 제출에 실패했습니다.');
-      }
-    } catch {
-      toast.error('네트워크 오류가 발생했습니다.');
-    }
-  };
+  // const submitOrder = async () => {
+  //   if (!userName) {
+  //     toast.error('이름을 먼저 입력해주세요.');
+  //     return;
+  //   }
+  //   if (selectItem.length === 0) {
+  //     toast.error('상품을 선택해주세요.');
+  //     return;
+  //   }
+  //
+  //   try {
+  //     const res = await fetch('/api/orders', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify({
+  //         user_name: userName,
+  //         items: selectItem.map((s) => ({
+  //           item_name: s.item,
+  //           item_type: s.type,
+  //           quantity: s.quantity,
+  //           item_image_url: `/images/${s.type}/${s.localFilename}`,
+  //           item_price: s.price ?? 0,
+  //         })),
+  //       }),
+  //     });
+  //
+  //     if (res.ok) {
+  //       toast.success('주문이 제출되었습니다!');
+  //       setSelectItem([]);
+  //     } else {
+  //       toast.error('주문 제출에 실패했습니다.');
+  //     }
+  //   } catch {
+  //     toast.error('네트워크 오류가 발생했습니다.');
+  //   }
+  // };
 
   const deleteItem = (id: string) => {
     return () =>
