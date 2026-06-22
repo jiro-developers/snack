@@ -75,7 +75,9 @@ const fetchItems = async (itemCategory: 'AA' | 'BB'): Promise<any[]> => {
 
 const buildItems = (rawItems: any[], categories: Category[]): Item[] => {
   const usedNames = new Set<string>();
-  return rawItems.map((item) => {
+  return rawItems
+    .filter((item) => item.itemStatus === '판매중')
+    .map((item) => {
     // itemCategory can be a string code or an object {code, type, typeName}
     const rawCat = item.itemCategory;
     const catCode: string = typeof rawCat === 'string' ? rawCat
