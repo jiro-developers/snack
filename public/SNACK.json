@@ -33,14 +33,6 @@
       "price": 1490
     },
     {
-      "alt": "자가비케첩맛",
-      "src": "https://cdn-dev.wefun.kr/item/202602/ZvTF4ckXAvJtqzGe.png",
-      "localFilename": "자가비케첩맛.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 4600
-    },
-    {
       "alt": "빅크런키",
       "src": "https://cdn-dev.wefun.kr/item/202509/V905yxhXsmdoX1WF.png",
       "localFilename": "빅크런키.jpg",
@@ -95,6 +87,14 @@
       "category": "AA11",
       "categoryName": "워터젤리",
       "price": 2430
+    },
+    {
+      "alt": "포테토칩K-양념치킨맛",
+      "src": "https://cdn-dev.wefun.kr/item/202601/ug5eq6uGKhQrEUFr.png",
+      "localFilename": "포테토칩K-양념치킨맛.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 2300
     },
     {
       "alt": "이클립스쿨링캔디레몬민트향",
@@ -161,6 +161,14 @@
       "price": 3780
     },
     {
+      "alt": "자몽",
+      "src": "https://cdn-dev.wefun.kr/item/202309/7zl43FkKJMQSyYOJ.jpg",
+      "localFilename": "자몽.jpg",
+      "category": "AA09",
+      "categoryName": "젤리류",
+      "price": 3310
+    },
+    {
       "alt": "청포요포",
       "src": "https://cdn-dev.wefun.kr/item/202509/YwP6OElEMX3J9U3w.png",
       "localFilename": "청포요포.jpg",
@@ -175,6 +183,14 @@
       "category": "AA04",
       "categoryName": "초콜릿류",
       "price": 2880
+    },
+    {
+      "alt": "커피쫀득이",
+      "src": "https://cdn-dev.wefun.kr/item/202509/DL5JsmY5PsX8inLx.png",
+      "localFilename": "커피쫀득이.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 1015
     },
     {
       "alt": "원데이오리지널",
@@ -207,6 +223,14 @@
       "category": "AA01",
       "categoryName": "과자",
       "price": 2300
+    },
+    {
+      "alt": "미주라 초코통밀크로와상",
+      "src": "https://cdn-dev.wefun.kr/item/202604/vN0Y8rvcTQ510nWk.png",
+      "localFilename": "미주라초코통밀크로와상.jpg",
+      "category": "AA03",
+      "categoryName": "파이",
+      "price": 13800
     },
     {
       "alt": "허쉬초콜릿칩 미니쿠키",
@@ -327,6 +351,14 @@
       "category": "AA08",
       "categoryName": "씨리얼바",
       "price": 1890
+    },
+    {
+      "alt": "도라에몽 씬포테이토앤초코",
+      "src": "https://cdn-dev.wefun.kr/item/202607/F2dWTA7wkIpCMQmM.png",
+      "localFilename": "도라에몽씬포테이토앤초코.jpg",
+      "category": "AA07",
+      "categoryName": "비스켓류",
+      "price": 3780
     },
     {
       "alt": "미니프레첼초코",
@@ -457,6 +489,14 @@
       "price": 2030
     },
     {
+      "alt": "무직타이거찹쌀손약과",
+      "src": "https://cdn-dev.wefun.kr/item/202509/WTVcuPLla3AmCfGt.png",
+      "localFilename": "무직타이거찹쌀손약과.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 1350
+    },
+    {
       "alt": "빼빼로초코kbo구단랜덤",
       "src": "https://cdn-dev.wefun.kr/item/202606/6JIQYF5KeIP2VOkU.jpg",
       "localFilename": "빼빼로초코kbo구단랜덤.jpg",
@@ -511,6 +551,30 @@
       "category": "AA07",
       "categoryName": "비스켓류",
       "price": 8910
+    },
+    {
+      "alt": "롤리팝아이스 60입",
+      "src": "https://cdn-dev.wefun.kr/item/202309/F1hdEsbdhgTasGib.jpg",
+      "localFilename": "롤리팝아이스60입.jpg",
+      "category": "AA05",
+      "categoryName": "캔디류",
+      "price": 410
+    },
+    {
+      "alt": "제크오리지널",
+      "src": "https://cdn-dev.wefun.kr/item/202509/YzbtFheQ265HhL9g.png",
+      "localFilename": "제크오리지널.jpg",
+      "category": "AA07",
+      "categoryName": "비스켓류",
+      "price": 7030
+    },
+    {
+      "alt": "하루견과퍼플",
+      "src": "https://cdn-dev.wefun.kr/item/202508/tR4DRcyONjj2KN06.png",
+      "localFilename": "하루견과퍼플.jpg",
+      "category": "AA10",
+      "categoryName": "견과류",
+      "price": 1630
     },
     {
       "alt": "비타500젤리",
@@ -585,6 +649,14 @@
       "price": 2300
     },
     {
+      "alt": "뉴룽지",
+      "src": "https://cdn-dev.wefun.kr/item/202509/2yS074DzHKwjRqkr.png",
+      "localFilename": "뉴룽지.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 2030
+    },
+    {
       "alt": "스니커즈땅콩펀사이즈",
       "src": "https://cdn-dev.wefun.kr/item/202309/iTEi90Ml4GbGtE8M.jfif",
       "localFilename": "스니커즈땅콩펀사이즈.jpg",
@@ -598,14 +670,6 @@
       "localFilename": "바나나쥬빌레크런치.jpg",
       "category": "AA01",
       "categoryName": "과자",
-      "price": 2300
-    },
-    {
-      "alt": "제로쿠앤크샌드스트로베리&밀크(메이플콜라보)",
-      "src": "https://cdn-dev.wefun.kr/item/202606/xfBHZzxdsQQjaFmd.png",
-      "localFilename": "제로쿠앤크샌드스트로베리&밀크.jpg",
-      "category": "AA07",
-      "categoryName": "비스켓류",
       "price": 2300
     },
     {
@@ -623,14 +687,6 @@
       "category": "AA09",
       "categoryName": "젤리류",
       "price": 2030
-    },
-    {
-      "alt": "투유저당초콜릿",
-      "src": "https://cdn-dev.wefun.kr/item/202602/hjkx9PrVTt0a8sHk.jpg",
-      "localFilename": "투유저당초콜릿.jpg",
-      "category": "AA04",
-      "categoryName": "초콜릿류",
-      "price": 4600
     },
     {
       "alt": "밀감푸딩",
@@ -663,6 +719,14 @@
       "category": "AA10",
       "categoryName": "견과류",
       "price": 2970
+    },
+    {
+      "alt": "비쵸비딸기",
+      "src": "https://cdn-dev.wefun.kr/item/202607/Ec6bIceaIqqEwuih.png",
+      "localFilename": "비쵸비딸기.jpg",
+      "category": "AA07",
+      "categoryName": "비스켓류",
+      "price": 4140
     },
     {
       "alt": "탱글탱글백도맛",
@@ -729,14 +793,6 @@
       "price": 2570
     },
     {
-      "alt": "촉촉한밤",
-      "src": "https://cdn-dev.wefun.kr/item/202312/MtNiyY55FFveCsry.png",
-      "localFilename": "촉촉한밤.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 2430
-    },
-    {
       "alt": "초코홈런볼",
       "src": "https://cdn-dev.wefun.kr/item/202509/jbdkcgbjXDRdsGYw.png",
       "localFilename": "초코홈런볼.jpg",
@@ -761,14 +817,6 @@
       "price": 4860
     },
     {
-      "alt": "프리미엄 몽쉘 말차&딸기",
-      "src": "https://cdn-dev.wefun.kr/item/202605/tGFKA4CvcetueWLG.png",
-      "localFilename": "프리미엄몽쉘말차&딸기.jpg",
-      "category": "AA03",
-      "categoryName": "파이",
-      "price": 10350
-    },
-    {
       "alt": "오레오마일드스위트",
       "src": "https://cdn-dev.wefun.kr/item/202509/plnKafctSkefrxIj.png",
       "localFilename": "오레오마일드스위트.jpg",
@@ -783,6 +831,14 @@
       "category": "AA02",
       "categoryName": "쿠키",
       "price": 2840
+    },
+    {
+      "alt": "오리온 오뜨 쇼콜라",
+      "src": "https://cdn-dev.wefun.kr/item/202309/PCfEOqjLFQQaw1Bn.jfif",
+      "localFilename": "오리온오뜨쇼콜라.jpg",
+      "category": "AA03",
+      "categoryName": "파이",
+      "price": 9460
     },
     {
       "alt": "젤리블리샤인머스켓",
@@ -857,6 +913,14 @@
       "price": 1350
     },
     {
+      "alt": "더바나나샌드웨이퍼",
+      "src": "https://cdn-dev.wefun.kr/item/202606/QBbIemvOBupBJWhJ.jpg",
+      "localFilename": "더바나나샌드웨이퍼.jpg",
+      "category": "AA07",
+      "categoryName": "비스켓류",
+      "price": 5600
+    },
+    {
       "alt": "말차초코팝콘",
       "src": "https://cdn-dev.wefun.kr/item/202512/dlvCYvC0wRmK1h6y.jpg",
       "localFilename": "말차초코팝콘.jpg",
@@ -871,6 +935,14 @@
       "category": "AA07",
       "categoryName": "비스켓류",
       "price": 2646
+    },
+    {
+      "alt": "폭신폭신말랑카우(딸기)",
+      "src": "https://cdn-dev.wefun.kr/item/202309/0X9gWUes5fzzSIkm.jpg",
+      "localFilename": "폭신폭신말랑카우.jpg",
+      "category": "AA05",
+      "categoryName": "캔디류",
+      "price": 7430
     },
     {
       "alt": "레드베리에너지바(35g*4개입)",
@@ -927,6 +999,14 @@
       "category": "AA01",
       "categoryName": "과자",
       "price": 1300
+    },
+    {
+      "alt": "왕꿈틀이미니",
+      "src": "https://cdn-dev.wefun.kr/item/202512/3EnDENWsqqfDnDph.png",
+      "localFilename": "왕꿈틀이미니.jpg",
+      "category": "AA09",
+      "categoryName": "젤리류",
+      "price": 8780
     },
     {
       "alt": "우도땅콩오란다",
@@ -1049,6 +1129,14 @@
       "price": 2430
     },
     {
+      "alt": "찰떡파이우베크림치즈맛",
+      "src": "https://cdn-dev.wefun.kr/item/202607/rKIGeWRdv0P4WtPB.jpg",
+      "localFilename": "찰떡파이우베크림치즈맛.jpg",
+      "category": "AA03",
+      "categoryName": "파이",
+      "price": 9200
+    },
+    {
       "alt": "엠앤엠즈 피넛",
       "src": "https://cdn-dev.wefun.kr/item/202509/Jwg8SgOytdQDSQ6o.png",
       "localFilename": "엠앤엠즈피넛.jpg",
@@ -1065,12 +1153,12 @@
       "price": 2300
     },
     {
-      "alt": "젤리벨리2가지혼합맛",
-      "src": "https://cdn-dev.wefun.kr/item/202001/EF9jxWpbCUFS04Qa.jpg",
-      "localFilename": "젤리벨리2가지혼합맛.jpg",
-      "category": "AA09",
-      "categoryName": "젤리류",
-      "price": 4060
+      "alt": "바닐라파이샌드비스킷",
+      "src": "https://cdn-dev.wefun.kr/item/202309/qyGHwiiZoE4IXVwn.jpg",
+      "localFilename": "바닐라파이샌드비스킷.jpg",
+      "category": "AA07",
+      "categoryName": "비스켓류",
+      "price": 2030
     },
     {
       "alt": "스타믹스 믹스팩 구미젤리",
@@ -1113,6 +1201,14 @@
       "price": 1490
     },
     {
+      "alt": "매그리녹차크림쿠키",
+      "src": "https://cdn-dev.wefun.kr/item/202410/2Myn6MhyYYaP2bMy.jpg",
+      "localFilename": "매그리녹차크림쿠키.jpg",
+      "category": "AA02",
+      "categoryName": "쿠키",
+      "price": 1630
+    },
+    {
       "alt": "초코로쉐",
       "src": "https://cdn-dev.wefun.kr/item/202407/ZJo15FxOUdLbwFJG.jpg",
       "localFilename": "초코로쉐.jpg",
@@ -1127,6 +1223,14 @@
       "category": "AA01",
       "categoryName": "과자",
       "price": 2300
+    },
+    {
+      "alt": "포켓웨하스",
+      "src": "https://cdn-dev.wefun.kr/item/202309/F98wEz8vdnjyCDYM.jfif",
+      "localFilename": "포켓웨하스.jpg",
+      "category": "AA07",
+      "categoryName": "비스켓류",
+      "price": 680
     },
     {
       "alt": "뿌셔불고기맛",
@@ -1185,6 +1289,14 @@
       "price": 2710
     },
     {
+      "alt": "국희애플샌드",
+      "src": "https://cdn-dev.wefun.kr/item/202509/yT15Gnx0tsfkQ6EP.png",
+      "localFilename": "국희애플샌드.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 2170
+    },
+    {
       "alt": "비첸지미니스낵패스트크림",
       "src": "https://cdn-dev.wefun.kr/item/202605/ERhTY8b21omt2spG.png",
       "localFilename": "비첸지미니스낵패스트크림.jpg",
@@ -1207,14 +1319,6 @@
       "category": "AA05",
       "categoryName": "캔디류",
       "price": 4060
-    },
-    {
-      "alt": "잇츠베러 초코시나몬크래커mini",
-      "src": "https://cdn-dev.wefun.kr/item/202510/pD6vb3aPJfupUGxk.png",
-      "localFilename": "잇츠베러초코시나몬크래커mini.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 2710
     },
     {
       "alt": "초코칩쿠키",
@@ -1489,6 +1593,22 @@
       "price": 2300
     },
     {
+      "alt": "카스타드우베라떼맛",
+      "src": "https://cdn-dev.wefun.kr/item/202607/XTwqhiWw7KHosBzB.jpg",
+      "localFilename": "카스타드우베라떼맛.jpg",
+      "category": "AA03",
+      "categoryName": "파이",
+      "price": 12420
+    },
+    {
+      "alt": "포도알맹이6개입",
+      "src": "https://cdn-dev.wefun.kr/item/202602/jWnt4QEJskXu6PiZ.png",
+      "localFilename": "포도알맹이6개입.jpg",
+      "category": "AA09",
+      "categoryName": "젤리류",
+      "price": 5140
+    },
+    {
       "alt": "프레첼갈릭버터맛",
       "src": "https://cdn-dev.wefun.kr/item/202509/ujrzIOspuNByuKvX.png",
       "localFilename": "프레첼갈릭버터맛.jpg",
@@ -1593,14 +1713,6 @@
       "price": 2300
     },
     {
-      "alt": "칸쵸",
-      "src": "https://cdn-dev.wefun.kr/item/202310/Q4xIGjundfYhUE2q.jpg",
-      "localFilename": "칸쵸.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 2030
-    },
-    {
       "alt": "Oh!고구마스틱",
       "src": "https://cdn-dev.wefun.kr/item/202511/akdH4LtumdsoXNWJ.png",
       "localFilename": "Oh!고구마스틱.jpg",
@@ -1689,6 +1801,14 @@
       "price": 2300
     },
     {
+      "alt": "후렌치파이사과",
+      "src": "https://cdn-dev.wefun.kr/item/202309/aceWYIqrHdFwAmgp.jpg",
+      "localFilename": "후렌치파이사과.jpg",
+      "category": "AA03",
+      "categoryName": "파이",
+      "price": 6080
+    },
+    {
       "alt": "씨리얼초코",
       "src": "https://cdn-dev.wefun.kr/item/202509/MQH5Lynvu7OlMKGu.png",
       "localFilename": "씨리얼초코.jpg",
@@ -1769,14 +1889,6 @@
       "price": 2570
     },
     {
-      "alt": "두부아몬드스낵",
-      "src": "https://cdn-dev.wefun.kr/item/202305/XBvXZz1QViHZocut.jpg",
-      "localFilename": "두부아몬드스낵.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 3720
-    },
-    {
       "alt": "웨이퍼롤바닐라향크림",
       "src": "https://cdn-dev.wefun.kr/item/202512/16SDTAnTRpHxXhC6.jpg",
       "localFilename": "웨이퍼롤바닐라향크림.jpg",
@@ -1849,6 +1961,14 @@
       "price": 1490
     },
     {
+      "alt": "후레쉬베리",
+      "src": "https://cdn-dev.wefun.kr/item/202309/m8sBXpAXzJPh1rfI.jpg",
+      "localFilename": "후레쉬베리.jpg",
+      "category": "AA03",
+      "categoryName": "파이",
+      "price": 10540
+    },
+    {
       "alt": "oh!고칼슘한입크리스피롤초코맛",
       "src": "https://cdn-dev.wefun.kr/item/202605/y8AWxZ07FLfDqUwU.png",
       "localFilename": "oh!고칼슘한입크리스피롤초코맛.jpg",
@@ -1871,6 +1991,14 @@
       "category": "AA01",
       "categoryName": "과자",
       "price": 3380
+    },
+    {
+      "alt": "리얼생감자스틱",
+      "src": "https://cdn-dev.wefun.kr/item/202505/MZwiUMBW4hbXJmMS.jpg",
+      "localFilename": "리얼생감자스틱.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 13000
     },
     {
       "alt": "미타라시당고모찌",
@@ -2001,6 +2129,14 @@
       "price": 2870
     },
     {
+      "alt": "카스타드말차&딸기",
+      "src": "https://cdn-dev.wefun.kr/item/202604/eo6USTob7AGtmoBS.png",
+      "localFilename": "카스타드말차&딸기.jpg",
+      "category": "AA03",
+      "categoryName": "파이",
+      "price": 9200
+    },
+    {
       "alt": "똑똑한스틱 고구마",
       "src": "https://cdn-dev.wefun.kr/item/202412/mkic76c4gqR1MUvg.jpeg",
       "localFilename": "똑똑한스틱고구마.jpg",
@@ -2017,14 +2153,6 @@
       "price": 5140
     },
     {
-      "alt": "미주라 초코통밀비스켓",
-      "src": "https://cdn-dev.wefun.kr/item/202604/Wz2zwXWHStMnM9ox.png",
-      "localFilename": "미주라초코통밀비스켓.jpg",
-      "category": "AA07",
-      "categoryName": "비스켓류",
-      "price": 11270
-    },
-    {
       "alt": "츄파춥스미니튜브",
       "src": "https://cdn-dev.wefun.kr/item/202309/9MqF73NbUVsgJc9G.jpeg",
       "localFilename": "츄파춥스미니튜브.jpg",
@@ -2039,14 +2167,6 @@
       "category": "AA10",
       "categoryName": "견과류",
       "price": 1760
-    },
-    {
-      "alt": "9가지 NINE 야채크래커",
-      "src": "https://cdn-dev.wefun.kr/item/202511/o2E5XH2pxYSoBmly.png",
-      "localFilename": "9가지NINE야채크래커.jpg",
-      "category": "AA07",
-      "categoryName": "비스켓류",
-      "price": 12150
     },
     {
       "alt": "아이스쿨용기껌",
@@ -2111,6 +2231,14 @@
       "category": "AA01",
       "categoryName": "과자",
       "price": 2300
+    },
+    {
+      "alt": "밤부 오리지널누가크래커",
+      "src": "https://cdn-dev.wefun.kr/item/202506/GqAQKiHf23x4Hs56.jpg",
+      "localFilename": "밤부오리지널누가크래커.jpg",
+      "category": "AA07",
+      "categoryName": "비스켓류",
+      "price": 10800
     },
     {
       "alt": "허브솔트믹스넛",
@@ -2225,14 +2353,6 @@
       "price": 7030
     },
     {
-      "alt": "와사비맛아몬드",
-      "src": "https://cdn-dev.wefun.kr/item/202511/2fr5Dm2s9KoKhfZw.png",
-      "localFilename": "와사비맛아몬드.jpg",
-      "category": "AA10",
-      "categoryName": "견과류",
-      "price": 10400
-    },
-    {
       "alt": "야채크래커",
       "src": "https://cdn-dev.wefun.kr/item/202509/SHmWSJQtxZWxELov.png",
       "localFilename": "야채크래커.jpg",
@@ -2281,14 +2401,6 @@
       "price": 2710
     },
     {
-      "alt": "크라운산도 스윗밀크",
-      "src": "https://cdn-dev.wefun.kr/item/202309/to4Kl0ceaqLJO62e.jpg",
-      "localFilename": "크라운산도스윗밀크.jpg",
-      "category": "AA07",
-      "categoryName": "비스켓류",
-      "price": 7160
-    },
-    {
       "alt": "미니꿀꽈배기",
       "src": "https://cdn-dev.wefun.kr/item/202509/VfCCMI1JDerhPWPQ.png",
       "localFilename": "미니꿀꽈배기.jpg",
@@ -2303,6 +2415,14 @@
       "category": "AA05",
       "categoryName": "캔디류",
       "price": 1220
+    },
+    {
+      "alt": "초코필드빼빼로",
+      "src": "https://cdn-dev.wefun.kr/item/202309/6d3Uu3B2LkHQd6Dj.jpg",
+      "localFilename": "초코필드빼빼로.jpg",
+      "category": "AA07",
+      "categoryName": "비스켓류",
+      "price": 2710
     },
     {
       "alt": "프링글스 오리지날(소)",
@@ -2321,28 +2441,20 @@
       "price": 2030
     },
     {
-      "alt": "리츠샌드위치크래커(화이트)",
-      "src": "https://cdn-dev.wefun.kr/item/202509/usw4gO22zQKlrHcP.png",
-      "localFilename": "리츠샌드위치크래커.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 3240
-    },
-    {
-      "alt": "네스퀵초코웨이퍼",
-      "src": "https://cdn-dev.wefun.kr/item/202509/9ONXSwqG8SrPREjw.png",
-      "localFilename": "네스퀵초코웨이퍼.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 1960
-    },
-    {
       "alt": "도라에몽 아이스콘빙빙 초코맛",
       "src": "https://cdn-dev.wefun.kr/item/202508/TvGuA6SZYZ4le6oI.jpg",
       "localFilename": "도라에몽아이스콘빙빙초코맛.jpg",
       "category": "AA01",
       "categoryName": "과자",
       "price": 2842
+    },
+    {
+      "alt": "박하사탕",
+      "src": "https://cdn-dev.wefun.kr/item/202309/Prgz4EsdFxYaav0q.jpg",
+      "localFilename": "박하사탕.jpg",
+      "category": "AA05",
+      "categoryName": "캔디류",
+      "price": 5140
     },
     {
       "alt": "퍼지바모카케이크",
@@ -2393,6 +2505,14 @@
       "price": 1350
     },
     {
+      "alt": "샌드나치즈크림",
+      "src": "https://cdn-dev.wefun.kr/item/202509/WbZ4O020FJ72cwO8.png",
+      "localFilename": "샌드나치즈크림.jpg",
+      "category": "AA07",
+      "categoryName": "비스켓류",
+      "price": 2170
+    },
+    {
       "alt": "과일칩딸기&요거트큐브",
       "src": "https://cdn-dev.wefun.kr/item/202605/aeVi1c0EhhVErLmD.jpg",
       "localFilename": "과일칩딸기&요거트큐브.jpg",
@@ -2423,14 +2543,6 @@
       "category": "AA02",
       "categoryName": "쿠키",
       "price": 7830
-    },
-    {
-      "alt": "크리스피허니눈꽃쌀과자",
-      "src": "https://cdn-dev.wefun.kr/item/202312/VErnuEJazmzLotcK.jpg",
-      "localFilename": "크리스피허니눈꽃쌀과자.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 1897
     },
     {
       "alt": "더말랭고구마",
@@ -2481,14 +2593,6 @@
       "price": 8780
     },
     {
-      "alt": "미쯔블랙",
-      "src": "https://cdn-dev.wefun.kr/item/202604/VrgOVn7cgM18jPcu.png",
-      "localFilename": "미쯔블랙_1.jpg",
-      "category": "AA07",
-      "categoryName": "비스켓류",
-      "price": 1150
-    },
-    {
       "alt": "오사쯔",
       "src": "https://cdn-dev.wefun.kr/item/202310/BXPWMXVKR4gat85B.png",
       "localFilename": "오사쯔.jpg",
@@ -2505,12 +2609,28 @@
       "price": 4030
     },
     {
+      "alt": "가나마일드",
+      "src": "https://cdn-dev.wefun.kr/item/202509/7ZE3r5gFARuTqwWy.png",
+      "localFilename": "가나마일드.jpg",
+      "category": "AA04",
+      "categoryName": "초콜릿류",
+      "price": 4600
+    },
+    {
       "alt": "쌀로별오리지널고소한맛",
       "src": "https://cdn-dev.wefun.kr/item/202310/4uIVRsVoD2rLYeFD.jpg",
       "localFilename": "쌀로별오리지널고소한맛.jpg",
       "category": "AA01",
       "categoryName": "과자",
       "price": 2300
+    },
+    {
+      "alt": "타타와파인애플쿠키",
+      "src": "https://cdn-dev.wefun.kr/item/202605/VjQeTqf3RMY1cgds.png",
+      "localFilename": "타타와파인애플쿠키.jpg",
+      "category": "AA03",
+      "categoryName": "파이",
+      "price": 13800
     },
     {
       "alt": "감자알칩치즈마요",
@@ -2697,6 +2817,14 @@
       "price": 9780
     },
     {
+      "alt": "자연공유단감말랭이",
+      "src": "https://cdn-dev.wefun.kr/item/202404/iFd3oODvMoYraEz4.jpg",
+      "localFilename": "자연공유단감말랭이.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 4730
+    },
+    {
       "alt": "꽃게랑",
       "src": "https://cdn-dev.wefun.kr/item/202310/jJngL6SpY46hVmch.jpg",
       "localFilename": "꽃게랑.jpg",
@@ -2857,20 +2985,20 @@
       "price": 3310
     },
     {
+      "alt": "스낵24 프로틴바",
+      "src": "https://cdn-dev.wefun.kr/item/202509/6iPhj91F4tJPDvKD.png",
+      "localFilename": "스낵24프로틴바.jpg",
+      "category": "AA08",
+      "categoryName": "씨리얼바",
+      "price": 1300
+    },
+    {
       "alt": "ABC초코쿠키",
       "src": "https://cdn-dev.wefun.kr/item/202309/4NWMfyaWNcRo7uLZ.jpg",
       "localFilename": "ABC초코쿠키.jpg",
       "category": "AA02",
       "categoryName": "쿠키",
       "price": 2030
-    },
-    {
-      "alt": "촉촉한황치즈칩",
-      "src": "https://cdn-dev.wefun.kr/item/202605/A3qi2OYuwSnbOR2T.jpg",
-      "localFilename": "촉촉한황치즈칩.jpg",
-      "category": "AA02",
-      "categoryName": "쿠키",
-      "price": 6440
     },
     {
       "alt": "포지타노레몬맛캔디",
@@ -2921,6 +3049,14 @@
       "price": 2300
     },
     {
+      "alt": "카무트하루견과(20g*10)",
+      "src": "https://cdn-dev.wefun.kr/item/202412/IzV17NNtKUx6x7o3.jpg",
+      "localFilename": "카무트하루견과.jpg",
+      "category": "AA10",
+      "categoryName": "견과류",
+      "price": 21600
+    },
+    {
       "alt": "밀카 오레오",
       "src": "https://cdn-dev.wefun.kr/item/202509/JC3rhesyr3XAr9Ab.png",
       "localFilename": "밀카오레오.jpg",
@@ -2945,6 +3081,14 @@
       "price": 3920
     },
     {
+      "alt": "빼바 리얼초콜릿프로틴바 제로슈거 화이트",
+      "src": "https://cdn-dev.wefun.kr/item/202412/lE3aVrJGECAn4Czp.jpg",
+      "localFilename": "빼바리얼초콜릿프로틴바제로슈거화이트.jpg",
+      "category": "AA08",
+      "categoryName": "씨리얼바",
+      "price": 3110
+    },
+    {
       "alt": "미니뿌셔 불고기맛",
       "src": "https://cdn-dev.wefun.kr/item/202509/Dhp65irwjUIbpSWF.png",
       "localFilename": "미니뿌셔불고기맛.jpg",
@@ -2955,7 +3099,7 @@
     {
       "alt": "가나마일드",
       "src": "https://cdn-dev.wefun.kr/item/202511/Fq71pDZGaItFMBSc.png",
-      "localFilename": "가나마일드.jpg",
+      "localFilename": "가나마일드_1.jpg",
       "category": "AA04",
       "categoryName": "초콜릿류",
       "price": 2300
@@ -3025,6 +3169,14 @@
       "price": 2500
     },
     {
+      "alt": "플랑복숭아",
+      "src": "https://cdn-dev.wefun.kr/item/202310/SsJuvrg9uQ2lRP8h.jpg",
+      "localFilename": "플랑복숭아.jpg",
+      "category": "AA03",
+      "categoryName": "파이",
+      "price": 7570
+    },
+    {
       "alt": "웨이퍼롤초콜릿크림",
       "src": "https://cdn-dev.wefun.kr/item/202512/MQekZFxOOlvvvfx8.jpg",
       "localFilename": "웨이퍼롤초콜릿크림.jpg",
@@ -3065,6 +3217,14 @@
       "price": 2170
     },
     {
+      "alt": "프로티원단백질바피넛버터맛",
+      "src": "https://cdn-dev.wefun.kr/item/202603/p2YwH35sDXzMxIsw.png",
+      "localFilename": "프로티원단백질바피넛버터맛.jpg",
+      "category": "AA08",
+      "categoryName": "씨리얼바",
+      "price": 4485
+    },
+    {
       "alt": "초코파이",
       "src": "https://cdn-dev.wefun.kr/item/202508/0sNEocROjYMvNrXZ.png",
       "localFilename": "초코파이.jpg",
@@ -3099,7 +3259,7 @@
     {
       "alt": "후레쉬베리",
       "src": "https://cdn-dev.wefun.kr/item/202309/D9fpFJwmN7F66rIq.jpg",
-      "localFilename": "후레쉬베리.jpg",
+      "localFilename": "후레쉬베리_1.jpg",
       "category": "AA03",
       "categoryName": "파이",
       "price": 5000
@@ -3119,14 +3279,6 @@
       "category": "AA11",
       "categoryName": "워터젤리",
       "price": 1220
-    },
-    {
-      "alt": "단백질칩버터구이오징어",
-      "src": "https://cdn-dev.wefun.kr/item/202509/nzsx9GaXTGE6jM1m.png",
-      "localFilename": "단백질칩버터구이오징어.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 2300
     },
     {
       "alt": "골든 몰키스트 크래커 초코맛",
@@ -3151,6 +3303,14 @@
       "category": "AA05",
       "categoryName": "캔디류",
       "price": 6750
+    },
+    {
+      "alt": "군고구마쫀득이",
+      "src": "https://cdn-dev.wefun.kr/item/202509/hwUPdhd7nQIEYkNr.png",
+      "localFilename": "군고구마쫀득이.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 2030
     },
     {
       "alt": "체리쉬망고푸딩젤리",
@@ -3225,14 +3385,6 @@
       "price": 2300
     },
     {
-      "alt": "킷캣청키오리지날",
-      "src": "https://cdn-dev.wefun.kr/item/202509/ky4ZGiMOjkynJdO8.png",
-      "localFilename": "킷캣청키오리지날.jpg",
-      "category": "AA04",
-      "categoryName": "초콜릿류",
-      "price": 2168
-    },
-    {
       "alt": "어썸팝콘 초콜릿",
       "src": "https://cdn-dev.wefun.kr/item/202509/lq9i9n3viTlK40Dv.png",
       "localFilename": "어썸팝콘초콜릿.jpg",
@@ -3281,6 +3433,14 @@
       "price": 8510
     },
     {
+      "alt": "쥬시믹스구미젤리딸기향",
+      "src": "https://cdn-dev.wefun.kr/item/202607/Yofcl2diWcFemZ1i.jpg",
+      "localFilename": "쥬시믹스구미젤리딸기향.jpg",
+      "category": "AA09",
+      "categoryName": "젤리류",
+      "price": 3850
+    },
+    {
       "alt": "누텔라앤고",
       "src": "https://cdn-dev.wefun.kr/item/202509/kZKruM3wtthGKc3i.png",
       "localFilename": "누텔라앤고.jpg",
@@ -3303,6 +3463,14 @@
       "category": "AA04",
       "categoryName": "초콜릿류",
       "price": 10130
+    },
+    {
+      "alt": "바삭칩고소한맛",
+      "src": "https://cdn-dev.wefun.kr/item/202603/li4t79wYPPmL2BuR.png",
+      "localFilename": "바삭칩고소한맛.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 1150
     },
     {
       "alt": "가나프리미엄쇼콜라립파이",
@@ -3393,12 +3561,12 @@
       "price": 950
     },
     {
-      "alt": "웨하스딸기",
-      "src": "https://cdn-dev.wefun.kr/item/202309/OCTbI0WYamAuku4p.jfif",
-      "localFilename": "웨하스딸기_1.jpg",
-      "category": "AA07",
-      "categoryName": "비스켓류",
-      "price": 1160
+      "alt": "카스타드우베라떼맛",
+      "src": "https://cdn-dev.wefun.kr/item/202607/dVELP46YRBJO4LQs.png",
+      "localFilename": "카스타드우베라떼맛_1.jpg",
+      "category": "AA03",
+      "categoryName": "파이",
+      "price": 4025
     },
     {
       "alt": "마이쮸사과맛",
@@ -3417,12 +3585,12 @@
       "price": 2430
     },
     {
-      "alt": "돌아온배배",
-      "src": "https://cdn-dev.wefun.kr/item/202309/tVgc88uvRArW3dhG.jpg",
-      "localFilename": "돌아온배배.jpg",
-      "category": "AA07",
-      "categoryName": "비스켓류",
-      "price": 1800
+      "alt": "초코홈런볼컵",
+      "src": "https://cdn-dev.wefun.kr/item/202509/ILsasE1n4ovbSgdI.png",
+      "localFilename": "초코홈런볼컵.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 2970
     },
     {
       "alt": "멘토스콜라맛",
@@ -3441,6 +3609,14 @@
       "price": 3700
     },
     {
+      "alt": "참쌀설병",
+      "src": "https://cdn-dev.wefun.kr/item/202508/dJ5LI0HeEZpSERfb.png",
+      "localFilename": "참쌀설병_1.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 7290
+    },
+    {
       "alt": "유키하나꿀쌀과자",
       "src": "https://cdn-dev.wefun.kr/item/202310/t0FgflrFsbLTOlvC.jpg",
       "localFilename": "유키하나꿀쌀과자.jpg",
@@ -3454,6 +3630,14 @@
       "localFilename": "아이셔츄자두요구르트.jpg",
       "category": "AA05",
       "categoryName": "캔디류",
+      "price": 1630
+    },
+    {
+      "alt": "Oh!오색하루견과",
+      "src": "https://cdn-dev.wefun.kr/item/202510/9kTwQ4bo0badfnkW.png",
+      "localFilename": "Oh!오색하루견과.jpg",
+      "category": "AA10",
+      "categoryName": "견과류",
       "price": 1630
     },
     {
@@ -3521,6 +3705,14 @@
       "price": 9050
     },
     {
+      "alt": "한끼바치즈맛",
+      "src": "https://cdn-dev.wefun.kr/item/202603/0owUHCEbEBVTYNEX.png",
+      "localFilename": "한끼바치즈맛.jpg",
+      "category": "AA08",
+      "categoryName": "씨리얼바",
+      "price": 1730
+    },
+    {
       "alt": "연양갱",
       "src": "https://cdn-dev.wefun.kr/item/202509/pL3iu8RYfDRmQL1S.png",
       "localFilename": "연양갱.jpg",
@@ -3543,6 +3735,14 @@
       "category": "AA01",
       "categoryName": "과자",
       "price": 1490
+    },
+    {
+      "alt": "더딸기샌드웨이퍼",
+      "src": "https://cdn-dev.wefun.kr/item/202606/ULeAqZujafpWnGLW.jpg",
+      "localFilename": "더딸기샌드웨이퍼.jpg",
+      "category": "AA07",
+      "categoryName": "비스켓류",
+      "price": 5600
     },
     {
       "alt": "프루티부시젤리",
@@ -3633,6 +3833,14 @@
       "price": 7030
     },
     {
+      "alt": "참붕어빵",
+      "src": "https://cdn-dev.wefun.kr/item/202309/vjnJWGaYo61FBr07.png",
+      "localFilename": "참붕어빵.jpg",
+      "category": "AA03",
+      "categoryName": "파이",
+      "price": 5880
+    },
+    {
       "alt": "킷캣4핑거",
       "src": "https://cdn-dev.wefun.kr/item/202509/F31P11Q5Cg3o3Z77.png",
       "localFilename": "킷캣4핑거.jpg",
@@ -3687,6 +3895,14 @@
       "category": "AA07",
       "categoryName": "비스켓류",
       "price": 1350
+    },
+    {
+      "alt": "망고킥",
+      "src": "https://cdn-dev.wefun.kr/item/202607/izV9urWHw33KF0dW.jpg",
+      "localFilename": "망고킥.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 1485
     },
     {
       "alt": "자일리톨빅팩판오리지널",
@@ -3833,6 +4049,14 @@
       "price": 4730
     },
     {
+      "alt": "오뚜기카레콘볼",
+      "src": "https://cdn-dev.wefun.kr/item/202606/M9pGK6WEZKxnpmk3.jpg",
+      "localFilename": "오뚜기카레콘볼.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 1300
+    },
+    {
       "alt": "저당 크리스피 그래놀라바 플레인",
       "src": "https://cdn-dev.wefun.kr/item/202509/kLtCba8nTlEp4iKK.png",
       "localFilename": "저당크리스피그래놀라바플레인.jpg",
@@ -3855,14 +4079,6 @@
       "category": "AA01",
       "categoryName": "과자",
       "price": 1760
-    },
-    {
-      "alt": "포카칩어니언",
-      "src": "https://cdn-dev.wefun.kr/item/202310/QSyv1JuYjpEj9Lkj.jpg",
-      "localFilename": "포카칩어니언.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 1701
     },
     {
       "alt": "마이구미 백도&황도",
@@ -3897,9 +4113,17 @@
       "price": 1630
     },
     {
+      "alt": "쥬시믹스구미젤리포도향",
+      "src": "https://cdn-dev.wefun.kr/item/202607/ToEQfvgWDfrq10O4.jpg",
+      "localFilename": "쥬시믹스구미젤리포도향.jpg",
+      "category": "AA09",
+      "categoryName": "젤리류",
+      "price": 3850
+    },
+    {
       "alt": "제크오리지널",
       "src": "https://cdn-dev.wefun.kr/item/202509/gx7c9RCSlSMunSxx.png",
-      "localFilename": "제크오리지널.jpg",
+      "localFilename": "제크오리지널_1.jpg",
       "category": "AA07",
       "categoryName": "비스켓류",
       "price": 2300
@@ -3945,25 +4169,9 @@
       "price": 2030
     },
     {
-      "alt": "킷캣청키쿠키앤크림",
-      "src": "https://cdn-dev.wefun.kr/item/202509/grRROcI6XGwg3h1P.png",
-      "localFilename": "킷캣청키쿠키앤크림.jpg",
-      "category": "AA04",
-      "categoryName": "초콜릿류",
-      "price": 2168
-    },
-    {
       "alt": "프레첼체다치즈맛",
       "src": "https://cdn-dev.wefun.kr/item/202509/bOcCtT8wKKsHSsNy.png",
       "localFilename": "프레첼체다치즈맛.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 2430
-    },
-    {
-      "alt": "크리스피프라이드콘",
-      "src": "https://cdn-dev.wefun.kr/item/202512/CVjbCh5jWgVhURsU.png",
-      "localFilename": "크리스피프라이드콘.jpg",
       "category": "AA01",
       "categoryName": "과자",
       "price": 2430
@@ -4113,6 +4321,14 @@
       "price": 2300
     },
     {
+      "alt": "롯데샌드",
+      "src": "https://cdn-dev.wefun.kr/item/202509/KgrJR35HKjAD7QsC.png",
+      "localFilename": "롯데샌드.jpg",
+      "category": "AA07",
+      "categoryName": "비스켓류",
+      "price": 2300
+    },
+    {
       "alt": "머쉬멜로우라운드",
       "src": "https://cdn-dev.wefun.kr/item/202104/k4CuzkvfRDhnyCRZ.jpg",
       "localFilename": "머쉬멜로우라운드.jpg",
@@ -4129,12 +4345,28 @@
       "price": 2030
     },
     {
+      "alt": "새콤짱사과맛",
+      "src": "https://cdn-dev.wefun.kr/item/202510/dBN4zXZBbfXibU0O.png",
+      "localFilename": "새콤짱사과맛.jpg",
+      "category": "AA09",
+      "categoryName": "젤리류",
+      "price": 680
+    },
+    {
       "alt": "무설탕자일리톨캔디페퍼민트향",
       "src": "https://cdn-dev.wefun.kr/item/202509/nQBdq33XllzGKRqY.png",
       "localFilename": "무설탕자일리톨캔디페퍼민트향.jpg",
       "category": "AA05",
       "categoryName": "캔디류",
       "price": 2646
+    },
+    {
+      "alt": "프로티원단백질바초코맛",
+      "src": "https://cdn-dev.wefun.kr/item/202603/foMkYQ44LkACi6Yu.png",
+      "localFilename": "프로티원단백질바초코맛.jpg",
+      "category": "AA08",
+      "categoryName": "씨리얼바",
+      "price": 4485
     },
     {
       "alt": "가나프리미엄랑드샤쇼콜라",
@@ -4193,14 +4425,6 @@
       "price": 1760
     },
     {
-      "alt": "민트초코볼아몬드",
-      "src": "https://cdn-dev.wefun.kr/item/202509/gzLILGhOVwYOfRem.png",
-      "localFilename": "민트초코볼아몬드.jpg",
-      "category": "AA04",
-      "categoryName": "초콜릿류",
-      "price": 4060
-    },
-    {
       "alt": "마이쮸포도맛",
       "src": "https://cdn-dev.wefun.kr/item/202309/JvFYY657zgGmmnP5.jpg",
       "localFilename": "마이쮸포도맛.jpg",
@@ -4223,6 +4447,14 @@
       "category": "AA07",
       "categoryName": "비스켓류",
       "price": 1490
+    },
+    {
+      "alt": "오뜨애플파이",
+      "src": "https://cdn-dev.wefun.kr/item/202607/XfVZP046Dldamn3K.png",
+      "localFilename": "오뜨애플파이.jpg",
+      "category": "AA03",
+      "categoryName": "파이",
+      "price": 4600
     },
     {
       "alt": "부드러운버터쿠키",
@@ -4263,14 +4495,6 @@
       "category": "AA03",
       "categoryName": "파이",
       "price": 4730
-    },
-    {
-      "alt": "허니버터칩",
-      "src": "https://cdn-dev.wefun.kr/item/202310/iiuTS7pWUpQv7dLw.jpg",
-      "localFilename": "허니버터칩.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 2300
     },
     {
       "alt": "동결건조딸기칩",
@@ -4345,6 +4569,22 @@
       "price": 1760
     },
     {
+      "alt": "포키극세",
+      "src": "https://cdn-dev.wefun.kr/item/202309/jcBoLeD0SDJsBcCQ.jpg",
+      "localFilename": "포키극세.jpg",
+      "category": "AA07",
+      "categoryName": "비스켓류",
+      "price": 2570
+    },
+    {
+      "alt": "제크샌드골든콘버터",
+      "src": "https://cdn-dev.wefun.kr/item/202607/acj5iZ3I6z57Dpwf.png",
+      "localFilename": "제크샌드골든콘버터.jpg",
+      "category": "AA02",
+      "categoryName": "쿠키",
+      "price": 6900
+    },
+    {
       "alt": "포키블루베리",
       "src": "https://cdn-dev.wefun.kr/item/202003/ssdap7w9QetMFHWa.png",
       "localFilename": "포키블루베리.jpg",
@@ -4409,12 +4649,28 @@
       "price": 2300
     },
     {
+      "alt": "칙촉스윗콘",
+      "src": "https://cdn-dev.wefun.kr/item/202607/MPKwDS1AXjndUYs9.jpg",
+      "localFilename": "칙촉스윗콘.jpg",
+      "category": "AA02",
+      "categoryName": "쿠키",
+      "price": 6440
+    },
+    {
       "alt": "베리베리스트로베리큐브",
       "src": "https://cdn-dev.wefun.kr/item/202606/mRMMhPft9prJPDF0.png",
       "localFilename": "베리베리스트로베리큐브.jpg",
       "category": "AA01",
       "categoryName": "과자",
       "price": 2880
+    },
+    {
+      "alt": "초코무쵸초콜릿바",
+      "src": "https://cdn-dev.wefun.kr/item/202509/c6HakezPL1549mOh.png",
+      "localFilename": "초코무쵸초콜릿바.jpg",
+      "category": "AA04",
+      "categoryName": "초콜릿류",
+      "price": 810
     },
     {
       "alt": "Oh!단호박스틱",
@@ -4473,14 +4729,6 @@
       "price": 5000
     },
     {
-      "alt": "잇츠베러 야채크래커mini",
-      "src": "https://cdn-dev.wefun.kr/item/202510/4dSEvWmsmy9r59C4.png",
-      "localFilename": "잇츠베러야채크래커mini.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 2710
-    },
-    {
       "alt": "하리보해피콜라",
       "src": "https://cdn-dev.wefun.kr/item/202309/GzOse6vutlfXpcky.jpg",
       "localFilename": "하리보해피콜라.jpg",
@@ -4497,12 +4745,36 @@
       "price": 4730
     },
     {
+      "alt": "비쵸비 말차쇼콜라",
+      "src": "https://cdn-dev.wefun.kr/item/202607/sP75E0FGZsbQvWgy.jpg",
+      "localFilename": "비쵸비말차쇼콜라.jpg",
+      "category": "AA07",
+      "categoryName": "비스켓류",
+      "price": 4140
+    },
+    {
       "alt": "나쵸로코치즈",
       "src": "https://cdn-dev.wefun.kr/item/202601/s8OSeGcS6vEL9Sk4.jpg",
       "localFilename": "나쵸로코치즈.jpg",
       "category": "AA01",
       "categoryName": "과자",
       "price": 3000
+    },
+    {
+      "alt": "미주라초코통밀비스켓",
+      "src": "https://cdn-dev.wefun.kr/item/202606/pAceyVrCXTX7g0tv.png",
+      "localFilename": "미주라초코통밀비스켓.jpg",
+      "category": "AA07",
+      "categoryName": "비스켓류",
+      "price": 11500
+    },
+    {
+      "alt": "스카치트리오캔디",
+      "src": "https://cdn-dev.wefun.kr/item/202309/h8RFibSo4L5jA2Dj.jpg",
+      "localFilename": "스카치트리오캔디.jpg",
+      "category": "AA05",
+      "categoryName": "캔디류",
+      "price": 6750
     },
     {
       "alt": "엠앤엠즈 크리스피",
@@ -4559,14 +4831,6 @@
       "category": "AA01",
       "categoryName": "과자",
       "price": 4730
-    },
-    {
-      "alt": "에이스바스크치즈케이크",
-      "src": "https://cdn-dev.wefun.kr/item/202509/Y6XD5byUXKtG2JwK.png",
-      "localFilename": "에이스바스크치즈케이크.jpg",
-      "category": "AA07",
-      "categoryName": "비스켓류",
-      "price": 6490
     },
     {
       "alt": "하리보골드베렌컵 젤리",
@@ -4681,6 +4945,14 @@
       "price": 3380
     },
     {
+      "alt": "말랑카우빠삐코",
+      "src": "https://cdn-dev.wefun.kr/item/202601/Y9uwnp2KgXcQ7nMX.jpg",
+      "localFilename": "말랑카우빠삐코.jpg",
+      "category": "AA05",
+      "categoryName": "캔디류",
+      "price": 7430
+    },
+    {
       "alt": "수박바젤리",
       "src": "https://cdn-dev.wefun.kr/item/202510/2JXoIuq1i9OQgT9c.png",
       "localFilename": "수박바젤리.jpg",
@@ -4721,6 +4993,14 @@
       "price": 2970
     },
     {
+      "alt": "카스타드딸기생크림",
+      "src": "https://cdn-dev.wefun.kr/item/202607/6YweUzTIdM3LGYU0.jfif",
+      "localFilename": "카스타드딸기생크림.jpg",
+      "category": "AA03",
+      "categoryName": "파이",
+      "price": 6900
+    },
+    {
       "alt": "콜라병젤리빈",
       "src": "https://cdn-dev.wefun.kr/item/202510/mXfzB5zsiZyJdGTo.png",
       "localFilename": "콜라병젤리빈.jpg",
@@ -4735,6 +5015,14 @@
       "category": "AA03",
       "categoryName": "파이",
       "price": 1300
+    },
+    {
+      "alt": "오모리김치볶음밥누룽지",
+      "src": "https://cdn-dev.wefun.kr/item/202509/2zYFBOZh4dxwijew.png",
+      "localFilename": "오모리김치볶음밥누룽지.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 2430
     },
     {
       "alt": "초코송이",
@@ -4961,14 +5249,6 @@
       "price": 2570
     },
     {
-      "alt": "단백질칩칠리살사",
-      "src": "https://cdn-dev.wefun.kr/item/202509/RfFFAIjEvkfpQ5RJ.png",
-      "localFilename": "단백질칩칠리살사.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 2300
-    },
-    {
       "alt": "이클립스페퍼민트향",
       "src": "https://cdn-dev.wefun.kr/item/202509/HhMMVYgKLo0LBDKW.png",
       "localFilename": "이클립스페퍼민트향.jpg",
@@ -5041,12 +5321,28 @@
       "price": 2710
     },
     {
+      "alt": "핵짱셔요콜라",
+      "src": "https://cdn-dev.wefun.kr/item/202510/gI0YPJNri0vddFnO.png",
+      "localFilename": "핵짱셔요콜라.jpg",
+      "category": "AA09",
+      "categoryName": "젤리류",
+      "price": 1630
+    },
+    {
       "alt": "프로틴웨하스초코",
       "src": "https://cdn-dev.wefun.kr/item/202606/jcze0zniIjWzBqpB.jpg",
       "localFilename": "프로틴웨하스초코.jpg",
       "category": "AA01",
       "categoryName": "과자",
       "price": 4020
+    },
+    {
+      "alt": "몬데겐지레몬퍼프",
+      "src": "https://cdn-dev.wefun.kr/item/202509/KYZHjINgMpZ5BM9C.png",
+      "localFilename": "몬데겐지레몬퍼프.jpg",
+      "category": "AA07",
+      "categoryName": "비스켓류",
+      "price": 1690
     },
     {
       "alt": "신쫄이레몬콜라맛",
@@ -5083,7 +5379,7 @@
     {
       "alt": "참붕어빵",
       "src": "https://cdn-dev.wefun.kr/item/202309/4ttvIqSfWmbV2u67.png",
-      "localFilename": "참붕어빵.jpg",
+      "localFilename": "참붕어빵_1.jpg",
       "category": "AA03",
       "categoryName": "파이",
       "price": 7830
@@ -5169,12 +5465,12 @@
       "price": 2300
     },
     {
-      "alt": "허니버터콘칩",
-      "src": "https://cdn-dev.wefun.kr/item/202509/hPvFQlrVsTro4IFx.png",
-      "localFilename": "허니버터콘칩.jpg",
+      "alt": "찍먹예감갈릭청양마요소스맛",
+      "src": "https://cdn-dev.wefun.kr/item/202509/CYbTYlD9EJRmYnYy.png",
+      "localFilename": "찍먹예감갈릭청양마요소스맛.jpg",
       "category": "AA01",
       "categoryName": "과자",
-      "price": 1300
+      "price": 2710
     },
     {
       "alt": "도리토스나쵸치즈",
@@ -5217,25 +5513,9 @@
       "price": 5000
     },
     {
-      "alt": "프링글스 양파맛(소)",
-      "src": "https://cdn-dev.wefun.kr/item/202509/0xxKzla9pUiTcESC.png",
-      "localFilename": "프링글스양파맛.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 2970
-    },
-    {
-      "alt": "뽀로로한입꿀약과",
-      "src": "https://cdn-dev.wefun.kr/item/202411/9h5Duhqy6UbjdDJu.jpg",
-      "localFilename": "뽀로로한입꿀약과.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 2710
-    },
-    {
       "alt": "폭신폭신말랑카우(밀크)",
       "src": "https://cdn-dev.wefun.kr/item/202001/YFvN67bv5XuVHCB9.jpg",
-      "localFilename": "폭신폭신말랑카우.jpg",
+      "localFilename": "폭신폭신말랑카우_1.jpg",
       "category": "AA05",
       "categoryName": "캔디류",
       "price": 4060
@@ -5331,31 +5611,15 @@
     {
       "alt": "폭신폭신말랑카우(딸기)",
       "src": "https://cdn-dev.wefun.kr/item/202309/ECULpUxxM3yMcS9C.jpg",
-      "localFilename": "폭신폭신말랑카우_1.jpg",
+      "localFilename": "폭신폭신말랑카우_2.jpg",
       "category": "AA05",
       "categoryName": "캔디류",
       "price": 4060
     },
     {
-      "alt": "밀가루없는제로칩어니언",
-      "src": "https://cdn-dev.wefun.kr/item/202512/wlJpKclztvZJ6Zts.png",
-      "localFilename": "밀가루없는제로칩어니언.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 4730
-    },
-    {
       "alt": "야채타임",
       "src": "https://cdn-dev.wefun.kr/item/202310/4qv22j1tz40nSITS.jpg",
       "localFilename": "야채타임.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 2300
-    },
-    {
-      "alt": "먹태깡고추장마요맛",
-      "src": "https://cdn-dev.wefun.kr/item/202509/IpEmOXYMEfDFTOis.png",
-      "localFilename": "먹태깡고추장마요맛.jpg",
       "category": "AA01",
       "categoryName": "과자",
       "price": 2300
@@ -5473,14 +5737,6 @@
       "price": 3780
     },
     {
-      "alt": "쁘띠첼요거빅화이트코코",
-      "src": "https://cdn-dev.wefun.kr/item/202309/rAD1YCEfQgKXlPxm.jpg",
-      "localFilename": "쁘띠첼요거빅화이트코코.jpg",
-      "category": "AA11",
-      "categoryName": "워터젤리",
-      "price": 4460
-    },
-    {
       "alt": "16곡물쫀드기",
       "src": "https://cdn-dev.wefun.kr/item/202001/CD0kRgOjkW2vb6v0.jpg",
       "localFilename": "16곡물쫀드기.jpg",
@@ -5529,14 +5785,6 @@
       "price": 6080
     },
     {
-      "alt": "초코파이",
-      "src": "https://cdn-dev.wefun.kr/item/202309/LpzPA0cMUAQxxIBC.jpg",
-      "localFilename": "초코파이_1.jpg",
-      "category": "AA03",
-      "categoryName": "파이",
-      "price": 7970
-    },
-    {
       "alt": "뻥이요",
       "src": "https://cdn-dev.wefun.kr/item/202310/wBtSWjCvRsUwAXpp.jpg",
       "localFilename": "뻥이요_1.jpg",
@@ -5567,6 +5815,14 @@
       "category": "AA03",
       "categoryName": "파이",
       "price": 1220
+    },
+    {
+      "alt": "프링글스 오리지날(대)",
+      "src": "https://cdn-dev.wefun.kr/item/202309/4mGDLEu4vmxPTSmo.jpg",
+      "localFilename": "프링글스오리지날_1.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 5140
     },
     {
       "alt": "어니언칩볶은양파맛",
@@ -5649,14 +5905,6 @@
       "price": 4600
     },
     {
-      "alt": "구운쌀과자 고소한맛",
-      "src": "https://cdn-dev.wefun.kr/item/202505/IiWGwyqx4KirdqIC.jpg",
-      "localFilename": "구운쌀과자고소한맛.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 2800
-    },
-    {
       "alt": "계란과자",
       "src": "https://cdn-dev.wefun.kr/item/202509/27Oofy6FmBw3W4rG.png",
       "localFilename": "계란과자_1.jpg",
@@ -5679,14 +5927,6 @@
       "category": "AA01",
       "categoryName": "과자",
       "price": 1350
-    },
-    {
-      "alt": "예감오리지널",
-      "src": "https://cdn-dev.wefun.kr/item/202001/Cpk78QioSTDbznnJ.jpg",
-      "localFilename": "예감오리지널_1.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 2170
     },
     {
       "alt": "오징어땅콩오리지날",
@@ -5729,14 +5969,6 @@
       "price": 8910
     },
     {
-      "alt": "밀가루없는제로칩솔티",
-      "src": "https://cdn-dev.wefun.kr/item/202512/skEjxoBBj5MKsCJQ.png",
-      "localFilename": "밀가루없는제로칩솔티.jpg",
-      "category": "AA01",
-      "categoryName": "과자",
-      "price": 4730
-    },
-    {
       "alt": "자가비짭짤한맛",
       "src": "https://cdn-dev.wefun.kr/item/202309/HeI55jEJvsw0lP45.jpg",
       "localFilename": "자가비짭짤한맛.jpg",
@@ -5745,12 +5977,12 @@
       "price": 2970
     },
     {
-      "alt": "요구르트향",
-      "src": "https://cdn-dev.wefun.kr/item/202309/hgNGUCg8hvi2PNCP.jpg",
-      "localFilename": "요구르트향.jpg",
-      "category": "AA05",
-      "categoryName": "캔디류",
-      "price": 3380
+      "alt": "몬데겐지소프트파이비스킷",
+      "src": "https://cdn-dev.wefun.kr/item/202509/uPEPBPRjwtzuPtS2.png",
+      "localFilename": "몬데겐지소프트파이비스킷.jpg",
+      "category": "AA07",
+      "categoryName": "비스켓류",
+      "price": 1690
     },
     {
       "alt": "쫀득쫀득쫀디기",
@@ -5785,12 +6017,28 @@
       "price": 1800
     },
     {
+      "alt": "구운감자슬림",
+      "src": "https://cdn-dev.wefun.kr/item/202509/vApGE1lYV80vSLZG.png",
+      "localFilename": "구운감자슬림.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 6620
+    },
+    {
       "alt": "트윅스 미니스",
       "src": "https://cdn-dev.wefun.kr/item/202309/Yh9G636cWtmhoXjG.jpg",
       "localFilename": "트윅스미니스.jpg",
       "category": "AA04",
       "categoryName": "초콜릿류",
       "price": 8370
+    },
+    {
+      "alt": "허쉬다크앤화이트쿠키",
+      "src": "https://cdn-dev.wefun.kr/item/202509/JjjydNMlpyHTVcvy.png",
+      "localFilename": "허쉬다크앤화이트쿠키.jpg",
+      "category": "AA02",
+      "categoryName": "쿠키",
+      "price": 2300
     },
     {
       "alt": "쥬시후레쉬(스틱팩)",
@@ -5849,6 +6097,14 @@
       "price": 4190
     },
     {
+      "alt": "쿠크슈몬커피",
+      "src": "https://cdn-dev.wefun.kr/item/202601/5fyKCryVNLu8F1c3.jpg",
+      "localFilename": "쿠크슈몬커피.jpg",
+      "category": "AA02",
+      "categoryName": "쿠키",
+      "price": 8370
+    },
+    {
       "alt": "고구마형과자",
       "src": "https://cdn-dev.wefun.kr/item/202509/ztBY7AKpMBZrSRFY.png",
       "localFilename": "고구마형과자.jpg",
@@ -5905,20 +6161,20 @@
       "price": 3042
     },
     {
-      "alt": "츄파춥스미니100개입",
-      "src": "https://cdn-dev.wefun.kr/item/202602/E6XJqhWDpVaToLFN.jpg",
-      "localFilename": "츄파춥스미니100개입.jpg",
-      "category": "AA05",
-      "categoryName": "캔디류",
-      "price": 14850
-    },
-    {
       "alt": "미니프레첼 스파이시",
       "src": "https://cdn-dev.wefun.kr/item/202509/suz7kD5BXhTMMeiV.png",
       "localFilename": "미니프레첼스파이시.jpg",
       "category": "AA01",
       "categoryName": "과자",
       "price": 1500
+    },
+    {
+      "alt": "4종 인기스낵 미니",
+      "src": "https://cdn-dev.wefun.kr/item/202106/PpBNxtwZR6OrPWHu.jpg",
+      "localFilename": "4종인기스낵미니.jpg",
+      "category": "AA01",
+      "categoryName": "과자",
+      "price": 5270
     },
     {
       "alt": "찍먹예감치폴레마요소스맛",
@@ -6115,7 +6371,7 @@
     {
       "alt": "포카칩어니언",
       "src": "https://cdn-dev.wefun.kr/item/202509/vCQok6TttViDHDsO.png",
-      "localFilename": "포카칩어니언_1.jpg",
+      "localFilename": "포카칩어니언.jpg",
       "category": "AA01",
       "categoryName": "과자",
       "price": 4730
@@ -6231,6 +6487,14 @@
       "category": "AA04",
       "categoryName": "초콜릿류",
       "price": 3520
+    },
+    {
+      "alt": "프로틴바K헤이즐넛다크초코",
+      "src": "https://cdn-dev.wefun.kr/item/202407/tRWx8c5fsIQ8ffGo.jpg",
+      "localFilename": "프로틴바K헤이즐넛다크초코.jpg",
+      "category": "AA08",
+      "categoryName": "씨리얼바",
+      "price": 9320
     },
     {
       "alt": "참붕어빵우유슈크림맛",
