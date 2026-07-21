@@ -65,7 +65,7 @@ const SearchCommand: React.FC<SearchCommandProps> = ({
         <CommandList>
           <CommandEmpty>검색 결과가 없습니다.</CommandEmpty>
           <CommandGroup heading="과자/스낵">
-            {snackItems.slice(0, 50).map((item, i) => (
+            {snackItems.map((item, i) => (
               <CommandItem
                 key={`snack-${i}`}
                 value={item.alt}
